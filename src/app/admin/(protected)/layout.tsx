@@ -1,7 +1,7 @@
 import React from "react";
 
-const AdminProtectedLayout = () => {
-  return <div>AdminProtectedLayout</div>;
+const AdminProtectedLayout = ({ children }: { children: React.ReactNode }) => {
+  return <div>{children}</div>;
 };
 
 export default AdminProtectedLayout;
