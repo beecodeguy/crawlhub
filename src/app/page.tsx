@@ -1,13 +1,11 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <main>
-      <nav>Navbar</nav>
+      <nav className="flex px-5 py-5">Navbar</nav>
       <section>
         <h1>Body</h1>
       </section>
-      <footer>
+      <footer className="h-[340px] bg-[#202020]">
         Footer
       </footer>
     </main>
