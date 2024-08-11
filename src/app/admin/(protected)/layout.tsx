@@ -5,7 +5,7 @@ const AdminProtectedLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex">
       <Sidebar />
-      {children}
+      <div className="p-5">{children}</div>
     </div>
   );
 };

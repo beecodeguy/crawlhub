@@ -1,41 +1,65 @@
 "use client";
-import React from "react";
-import {
-  LayoutDashboard,
-  Settings,
-  ShoppingCart,
-  UsersRound,
-} from "lucide-react";
 
-import { useWindowWidth } from "@react-hook/window-size";
-import { Nav } from "./nav";
-import Routes from "@/constants/routes";
+import React, { useState } from "react";
+import { Icons } from "./icons";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-type Props = {};
+const MenuItems = [
+  {
+    title: "Dashboard",
+    link: "/admin/dashboard",
+    icon: <Icons.home />,
+  },
+  {
+    title: "Users",
+    link: "/admin/users",
+    icon: <Icons.users />,
+  },
+];
 
-export default function Sidebar({}: Props) {
-  const [isCollapsed, setIsCollapsed] = React.useState(false);
+const Sidebar = () => {
+  const pathname = usePathname();
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const onlyWidth = useWindowWidth();
-  const mobileWidth = onlyWidth < 768;
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
-  //function toggleSidebar() {
-  //  setIsCollapsed(!isCollapsed);
-  // }
   return (
-    <div className="relative min-w-[80px] border-r px-3 pb-10">
-      <h1>Admin Panel</h1>
-      {/* {!mobileWidth && (
-        <div className="absolute right-[-20px] top-7">
-          <Button
-            className="rounded-full p-2 bg-gray-100"
-            onClick={toggleSidebar}
+    <aside
+      className={`sticky top-0 h-screen ${
+        !isCollapsed ? "w-56" : "w-[72px]"
+      } bg-gray-100 relative text-gray-800 p-4`}
+    >
+      <div className="flex items-center mb-4 space-x-1 w-3/5">
+        <Icons.logo />
+        <button
+          onClick={toggleCollapse}
+          className="rounded-full bg-gray-400 absolute left-[calc(100%-16px)]"
+        >
+          {!isCollapsed ? <ChevronRight /> : <ChevronLeft />}
+        </button>
+      </div>
+      <nav className="space-y-2">
+        {MenuItems.map((item) => (
+          <Link
+            href={item.link}
+            className={`w-full flex items-center space-x-2 hover:bg-gray-200 py-2 px-2 rounded-lg text-gray-800 ${
+              item.link === pathname ? "bg-gray-200" : ""
+            }`}
+            key={item.title}
           >
-            <ChevronRight />
-          </Button>
-        </div>
-      )} */}
-      <Nav isCollapsed={mobileWidth ? true : isCollapsed} links={Routes} />
-    </div>
+            {item.icon}
+            {!isCollapsed && (
+              <span className="text-sm font-medium">{item.title}</span>
+            )}
+          </Link>
+        ))}
+      </nav>
+    </aside>
   );
-}
+};
+
+export default Sidebar;
