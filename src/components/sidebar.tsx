@@ -5,6 +5,7 @@ import { Icons } from "./icons";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const MenuItems = [
   {
@@ -28,10 +29,11 @@ const Sidebar = () => {
   };
 
   return (
-    <aside
-      className={`sticky top-0 h-screen ${
-        !isCollapsed ? "w-56" : "w-[72px]"
-      } bg-gray-100 relative text-gray-800 p-4`}
+    <motion.aside
+      className={`sticky top-0 h-screen bg-gray-100 relative text-gray-800 p-4`}
+      initial={{ width: isCollapsed ? 72 : 224 }}
+      animate={{ width: isCollapsed ? 72 : 224 }}
+      transition={{ duration: 0.3 }}
     >
       <div className="flex items-center mb-4 space-x-1 w-3/5">
         <Icons.logo />
@@ -51,14 +53,21 @@ const Sidebar = () => {
             }`}
             key={item.title}
           >
-            {item.icon}
+            <span>{item.icon}</span>
             {!isCollapsed && (
-              <span className="text-sm font-medium">{item.title}</span>
+              <motion.span
+                className="text-sm font-medium"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                {item.title}
+              </motion.span>
             )}
           </Link>
         ))}
       </nav>
-    </aside>
+    </motion.aside>
   );
 };
 
