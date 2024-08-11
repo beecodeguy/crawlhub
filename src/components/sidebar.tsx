@@ -25,11 +25,11 @@ export default function Sidebar({}: Props) {
   }
   return (
     <div className="relative min-w-[80px] border-r px-3 pb-10 pt-24">
+      <h1>Admin Panel</h1>
       {!mobileWidth && (
         <div className="absolute right-[-20px] top-7">
           <Button
-            variant="secondary"
-            className="rounded-full p-2"
+            className="rounded-full p-2 bg-indigo-500"
             onClick={toggleSidebar}
           >
             <ChevronRight />
@@ -41,25 +41,25 @@ export default function Sidebar({}: Props) {
         links={[
           {
             title: "Dashboard",
-            href: "/",
+            href: "/admin/dashboard",
             icon: LayoutDashboard,
             variant: "default",
           },
           {
             title: "Users",
-            href: "/users",
+            href: "/admin/users",
             icon: UsersRound,
             variant: "ghost",
           },
           {
             title: "Orders",
-            href: "/orders",
+            href: "/admin/orders",
             icon: ShoppingCart,
             variant: "ghost",
           },
           {
             title: "Settings",
-            href: "/settings",
+            href: "/admin/settings",
             icon: Settings,
             variant: "ghost",
           },
