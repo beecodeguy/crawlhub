@@ -9,6 +9,7 @@ import {
 
 import { useWindowWidth } from "@react-hook/window-size";
 import { Nav } from "./nav";
+import Routes from "@/constants/routes";
 
 type Props = {};
 
@@ -20,7 +21,7 @@ export default function Sidebar({}: Props) {
 
   //function toggleSidebar() {
   //  setIsCollapsed(!isCollapsed);
- // }
+  // }
   return (
     <div className="relative min-w-[80px] border-r px-3 pb-10">
       <h1>Admin Panel</h1>
@@ -34,35 +35,7 @@ export default function Sidebar({}: Props) {
           </Button>
         </div>
       )} */}
-      <Nav
-        isCollapsed={mobileWidth ? true : isCollapsed}
-        links={[
-          {
-            title: "Dashboard",
-            href: "/admin/dashboard",
-            icon: LayoutDashboard,
-            variant: "default",
-          },
-          {
-            title: "Users",
-            href: "/admin/users",
-            icon: UsersRound,
-            variant: "ghost",
-          },
-          {
-            title: "Orders",
-            href: "/admin/orders",
-            icon: ShoppingCart,
-            variant: "ghost",
-          },
-          {
-            title: "Settings",
-            href: "/admin/settings",
-            icon: Settings,
-            variant: "ghost",
-          },
-        ]}
-      />
+      <Nav isCollapsed={mobileWidth ? true : isCollapsed} links={Routes} />
     </div>
   );
 }
