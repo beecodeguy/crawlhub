@@ -1,4 +1,4 @@
-import ReactTable from "@/components/table";
+import ReactTable from "@/components/table-component";
 import React from "react";
 
 const Users = () => {

@@ -9,6 +9,14 @@ import {
   ColumnDef,
   flexRender,
 } from "@tanstack/react-table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./ui/table";
 
 type Person = {
   id: number;
@@ -56,8 +64,10 @@ const ReactTable = () => {
         size: 60,
       },
       {
-        accessorKey: "firstName",
+        accessorFn: (row) => row.lastName,
+        id: "firstName",
         cell: (info) => info.getValue(),
+        header: () => <span>First Name</span>,
       },
       {
         accessorFn: (row) => row.lastName,
@@ -85,13 +95,13 @@ const ReactTable = () => {
   return (
     <div className="p-2 block max-w-full">
       <div className="h-2" />
-      <table className="w-[700px]">
-        <thead>
+      <Table>
+        <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
+            <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
-                  <th key={header.id} colSpan={header.colSpan}>
+                  <TableHead key={header.id} colSpan={header.colSpan}>
                     {header.isPlaceholder ? null : (
                       <div>
                         {flexRender(
@@ -100,31 +110,31 @@ const ReactTable = () => {
                         )}
                       </div>
                     )}
-                  </th>
+                  </TableHead>
                 );
               })}
-            </tr>
+            </TableRow>
           ))}
-        </thead>
-        <tbody>
+        </TableHeader>
+        <TableBody>
           {table.getRowModel().rows.map((row) => {
             return (
-              <tr key={row.id}>
+              <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => {
                   return (
-                    <td key={cell.id}>
+                    <TableCell key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
                       )}
-                    </td>
+                    </TableCell>
                   );
                 })}
-              </tr>
+              </TableRow>
             );
           })}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 };

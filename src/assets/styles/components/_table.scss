@@ -4,6 +4,10 @@ table {
   width: 100%;
 }
 
+table thead{
+  color: white;
+}
+
 table td,
 table th {
   border: 1px solid #ddd;
@@ -23,5 +27,4 @@ table th {
   padding-bottom: 12px;
   text-align: left;
   background-color: #353849;
-  color: white;
 }
