@@ -21,7 +21,7 @@ const MenuItems = [
   {
     title: "Blogs",
     link: "/admin/blogs",
-    icon: <Icons.users />,
+    icon: <Icons.blog />,
   },
 ];
 
