@@ -1,7 +1,12 @@
+import ReactTable from "@/components/table";
 import React from "react";
 
 const AdminBlogs = () => {
-  return <div>BlogsPage</div>;
+  return (
+    <div>
+      <ReactTable />
+    </div>
+  );
 };
 
 export default AdminBlogs;
