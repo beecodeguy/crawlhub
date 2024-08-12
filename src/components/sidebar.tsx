@@ -18,6 +18,11 @@ const MenuItems = [
     link: "/admin/users",
     icon: <Icons.users />,
   },
+  {
+    title: "Blogs",
+    link: "/admin/blogs",
+    icon: <Icons.users />,
+  },
 ];
 
 const Sidebar = () => {
