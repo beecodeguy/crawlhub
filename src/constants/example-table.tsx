@@ -44,13 +44,17 @@ export const columns: ColumnDef<OrderColumn>[] = [
       return <p className="font-medium text-gray-600">{email}</p>;
     },
   },
-
   {
     accessorKey: "createdAt",
-    header: "Date",
+    header: "Created At",
   },
   {
     accessorKey: "completedAt",
-    header: "Date",
+    header: "Updated At",
+  },
+  {
+    accessorKey: "action",
+    header: "Action",
+    cell: () => <button>Edit</button>,
   },
 ];

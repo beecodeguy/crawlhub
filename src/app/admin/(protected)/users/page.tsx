@@ -14,8 +14,8 @@ const Users = () => {
             destination: "Kathmandu",
             email: "r@gmail.com",
             amount: 100,
-            createdAt: "",
-            completedAt: "",
+            createdAt: "2015-02-11",
+            completedAt: "2015-02-11",
           },
         ]}
       />
