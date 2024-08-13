@@ -1,12 +1,12 @@
 import { DataTable } from "@/components/table-component";
-import { UserColumns } from "@/constants/columns/UserColumn";
+import { UserColumns } from "./_components/UserColumn";
 import React from "react";
 
 const Users = () => {
   return (
     <div>
       <DataTable
-        searchKey="destination"
+        searchKey="name"
         columns={UserColumns}
         data={[
           {

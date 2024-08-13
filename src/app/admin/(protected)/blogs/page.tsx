@@ -1,12 +1,12 @@
 import { DataTable } from "@/components/table-component";
-import { BlogColumns } from "@/constants/columns/BlogColumn";
+import { BlogColumns } from "./_components/BlogColumn";
 import React from "react";
 
 const AdminBlogs = () => {
   return (
     <div>
       <DataTable
-        searchKey="email"
+        searchKey="user"
         columns={BlogColumns}
         data={[
           {

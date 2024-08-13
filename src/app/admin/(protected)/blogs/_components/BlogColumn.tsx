@@ -1,6 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
+import CellAction from "./cell-action";
 
 export type BlogColumn = {
   id: string;
@@ -54,6 +55,6 @@ export const BlogColumns: ColumnDef<BlogColumn>[] = [
   {
     accessorKey: "action",
     header: "Action",
-    cell: () => <button>Edit</button>,
+    cell: () => <CellAction />,
   },
 ];
