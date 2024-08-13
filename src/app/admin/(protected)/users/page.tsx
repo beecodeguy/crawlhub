@@ -9,7 +9,7 @@ const Users = () => {
       <div className="flex justify-between">
         <h1 className="text-2xl">Users</h1>
         <Link
-          className="bg-[#346345] text-white p-2 text-center no-underline inline-block text-lg m-1 cursor-pointer"
+          className="bg-[#346345] text-white p-2 text-center no-underline inline-block text-md m-1 cursor-pointer"
           href="/admin/users/registration"
         >
           + Register User
