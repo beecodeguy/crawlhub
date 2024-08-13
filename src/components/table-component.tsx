@@ -39,7 +39,7 @@ export function DataTable<TData, TValue>({ columns, data, searchKey }: DataTable
     <div className="border border-[#42454896] px-2.5 py-0 rounded-[10px]">
       <div className="flex items-center py-4">
         <Input
-          placeholder="Search"
+          placeholder="Search..."
           value={(table.getColumn(searchKey)?.getFilterValue() as string) ?? ""}
           onChange={event => table.getColumn(searchKey)?.setFilterValue(event.target.value)}
           className="max-w-sm"
