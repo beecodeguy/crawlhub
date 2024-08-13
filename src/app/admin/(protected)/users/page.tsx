@@ -1,5 +1,5 @@
 import { DataTable } from "@/components/table-component";
-import { columns } from "@/constants/example-table";
+import { UserColumns } from "@/constants/columns/UserColumn";
 import React from "react";
 
 const Users = () => {
@@ -7,15 +7,14 @@ const Users = () => {
     <div>
       <DataTable
         searchKey="destination"
-        columns={columns}
+        columns={UserColumns}
         data={[
           {
             id: "1",
-            destination: "Kathmandu",
+            name:"Rujal Sapkota",
             email: "r@gmail.com",
-            amount: 100,
+            role: "user",
             createdAt: "2015-02-11",
-            completedAt: "2015-02-11",
           },
         ]}
       />
