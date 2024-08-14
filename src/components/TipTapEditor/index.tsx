@@ -6,6 +6,8 @@ import Toolbar from "./Toolbar";
 import Underline from "@tiptap/extension-underline";
 import Image from "@tiptap/extension-image";
 import ImageResize from "tiptap-extension-resize-image";
+import { Color } from "@tiptap/extension-color";
+import TextStyle from "@tiptap/extension-text-style";
 
 import { useState } from "react";
 
@@ -13,7 +15,7 @@ const TiptapEditor = () => {
   const [content, setContent] = useState("");
 
   const editor = useEditor({
-    extensions: [StarterKit, Underline, ImageResize, Image],
+    extensions: [StarterKit, Underline, ImageResize, TextStyle, Image, Color],
     editorProps: {
       attributes: {
         class:

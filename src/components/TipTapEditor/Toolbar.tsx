@@ -24,10 +24,6 @@ type Props = {
 
 const Toolbar = ({ editor }: Props) => {
   const addImage = useCallback(() => {
-    if (editor.isActive("image")) {
-      editor.chain().focus().deleteCurrentNode()
-      return;
-    }
     const url = window.prompt("URL");
 
     if (url) {
@@ -93,6 +89,13 @@ const Toolbar = ({ editor }: Props) => {
         >
           <Strikethrough className="w-5 h-5" />
         </button>
+        <input
+          type="color"
+          onChange={(event) =>
+            editor.chain().focus().setColor(event.target.value).run()
+          }
+          data-testid="setColor"
+        />
         <button
           onClick={(e) => {
             e.preventDefault();
