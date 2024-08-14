@@ -1,0 +1,46 @@
+.tiptap {
+  :first-child {
+    margin-top: 0;
+  }
+
+  h1,
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  blockquote {
+    border-left: 3px solid #3d25141f;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  /* List styles */
+  ul,
+  ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+    list-style: initial;
+
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
+
+  code {
+    background-color: #5805ff0d;
+    border-radius: 0.4rem;
+    color: #2e2b29;
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
+}
