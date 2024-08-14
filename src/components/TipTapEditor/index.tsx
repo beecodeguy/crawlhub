@@ -16,6 +16,7 @@ const TipTapEditor = () => {
 
   const editor = useEditor({
     extensions: [StarterKit, Underline, ImageResize, TextStyle, Image, Color],
+    immediatelyRender: true,
     editorProps: {
       attributes: {
         class:
@@ -38,7 +39,11 @@ const TipTapEditor = () => {
   return (
     <div className="w-full">
       <Toolbar editor={editor} content={content} />
-      <EditorContent className="cursor-text" style={{ whiteSpace: "pre-line" }} editor={editor} />
+      <EditorContent
+        className="cursor-text"
+        style={{ whiteSpace: "pre-line" }}
+        editor={editor}
+      />
     </div>
   );
 };

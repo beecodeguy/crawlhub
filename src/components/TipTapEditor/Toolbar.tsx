@@ -42,7 +42,7 @@ const Toolbar = ({ editor }: Props) => {
           className={
             editor.isActive("bold")
               ? "bg-sky-700 text-white rounded-lg p-1"
-              : "bg-gray-200 rounded p-1"
+              : "bg-gray-200 rounded hover:bg-sky-700 p-1"
           }
         >
           <Bold className="w-5 h-5" />

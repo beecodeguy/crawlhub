@@ -6,14 +6,14 @@ import React from "react";
 const BlogEditor = () => {
   return (
     <div className="flex flex-col gap-3">
-      <Label>
-        Title
+      <div>
+        <Label>Title</Label>
         <Input />
-      </Label>
-      <Label>
-        Content
+      </div>
+      <div>
+        <Label>Content</Label>
         <TipTapEditor />
-      </Label>
+      </div>
     </div>
   );
 };
