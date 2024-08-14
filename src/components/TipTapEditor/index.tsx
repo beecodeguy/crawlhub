@@ -11,7 +11,7 @@ import TextStyle from "@tiptap/extension-text-style";
 
 import { useState } from "react";
 
-const TiptapEditor = () => {
+const TipTapEditor = () => {
   const [content, setContent] = useState("");
 
   const editor = useEditor({
@@ -19,7 +19,7 @@ const TiptapEditor = () => {
     editorProps: {
       attributes: {
         class:
-          "border border-gray-400 p-4 min-h-[12rem] max-h-[12rem] overflow-y-auto outline-none prose max-w-none",
+          "border border-gray-400 p-4 min-h-[20rem] max-h-[20rem] overflow-y-auto outline-none prose max-w-none",
       },
     },
     onUpdate: ({ editor }) => {
@@ -36,11 +36,11 @@ const TiptapEditor = () => {
   };
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full">
       <Toolbar editor={editor} content={content} />
-      <EditorContent style={{ whiteSpace: "pre-line" }} editor={editor} />
+      <EditorContent className="cursor-text" style={{ whiteSpace: "pre-line" }} editor={editor} />
     </div>
   );
 };
 
-export default TiptapEditor;
+export default TipTapEditor;

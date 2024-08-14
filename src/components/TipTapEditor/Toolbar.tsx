@@ -32,10 +32,7 @@ const Toolbar = ({ editor }: Props) => {
   }, [editor]);
 
   return (
-    <div
-      className="px-4 py-3 rounded-tl-md rounded-tr-md flex justify-between items-start
-    gap-5 w-full flex-wrap border border-gray-700"
-    >
+    <div className="px-4 py-3 rounded-tl-md rounded-tr-md flex justify-between items-start gap-5 w-full flex-wrap border border-gray-700">
       <div className="flex justify-start items-center gap-5 w-full lg:w-10/12 flex-wrap ">
         <button
           onClick={(e) => {
@@ -45,7 +42,7 @@ const Toolbar = ({ editor }: Props) => {
           className={
             editor.isActive("bold")
               ? "bg-sky-700 text-white rounded-lg p-1"
-              : "bg-gray-200 rounded hover:bg-sky-700 p-1"
+              : "bg-gray-200 rounded p-1"
           }
         >
           <Bold className="w-5 h-5" />
@@ -91,6 +88,7 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <input
           type="color"
+          className="h-7 w-7 cursor-pointer"
           onChange={(event) =>
             editor.chain().focus().setColor(event.target.value).run()
           }

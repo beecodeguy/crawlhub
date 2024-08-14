@@ -1,10 +1,11 @@
 import React from "react";
-import TiptapEditor from "@/components/TipTapEditor";
+import BlogEditor from "../_components/BlogEditor";
 
 const CreateBlog = () => {
   return (
-    <div>
-      <TiptapEditor />
+    <div className="flex flex-col gap-3">
+      <h1>Create Blog</h1>
+      <BlogEditor />
     </div>
   );
 };
