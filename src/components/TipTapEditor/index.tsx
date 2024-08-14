@@ -4,15 +4,16 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Toolbar from "./Toolbar";
 import Underline from "@tiptap/extension-underline";
-import Image from "@tiptap/extension-image"
+import Image from "@tiptap/extension-image";
+import ImageResize from "tiptap-extension-resize-image";
+
 import { useState } from "react";
 
 const TiptapEditor = () => {
   const [content, setContent] = useState("");
-  
 
   const editor = useEditor({
-    extensions: [StarterKit, Underline, Image],
+    extensions: [StarterKit, Underline, ImageResize, Image],
     editorProps: {
       attributes: {
         class:

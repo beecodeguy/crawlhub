@@ -24,6 +24,10 @@ type Props = {
 
 const Toolbar = ({ editor }: Props) => {
   const addImage = useCallback(() => {
+    if (editor.isActive("image")) {
+      editor.chain().focus().deleteCurrentNode()
+      return;
+    }
     const url = window.prompt("URL");
 
     if (url) {
