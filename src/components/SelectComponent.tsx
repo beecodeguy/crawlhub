@@ -21,11 +21,10 @@ const SelectComponent: React.FC<IProps> = ({ onChange, value }) => {
   return (
     <Select onValueChange={onChange} value={value}>
       <SelectTrigger className="mt-2">
-        <SelectValue placeholder="Select a fruit" />
+        <SelectValue placeholder="Select ..." />
       </SelectTrigger>
       <SelectContent className="bg-white w-full">
         <SelectGroup>
-          <SelectLabel>Select ...</SelectLabel>
           <SelectItem value="admin">Admin</SelectItem>
           <SelectItem value="user">User</SelectItem>
         </SelectGroup>
