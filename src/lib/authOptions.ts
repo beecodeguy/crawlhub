@@ -1,6 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import prismadb from "@/lib/prismadb";
 import { NextAuthOptions } from "next-auth";
+// import bcrypt from "bcrypt";
 
 export const authOptions: NextAuthOptions = {
   session: {
@@ -27,29 +28,26 @@ export const authOptions: NextAuthOptions = {
         },
       },
       async authorize(credentials) {
-        if (
-          !credentials?.email ||
-          !credentials.password ||
-          !credentials?.role
-        ) {
+        if (!credentials?.email || !credentials.password) {
           return null;
         }
 
         const user = await prismadb.user.findFirst({
-          where: {
-            email: credentials.email,
-          },
+            where: {
+                email: credentials.email,
+            },
         });
+        console.log({ credentials,user });
 
         if (!user) {
           return null;
         }
 
-        if (user.role !== credentials.role) {
-          return null;
-        }
+        // const hashedPassword = await bcrypt.hash(credentials.password, 10);
 
         const isPasswordValid = user.password === credentials.password;
+
+        console.log({ isPasswordValid });
 
         if (!isPasswordValid) {
           return null;

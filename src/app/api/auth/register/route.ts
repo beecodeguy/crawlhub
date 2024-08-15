@@ -1,6 +1,6 @@
 import prismadb from "@/lib/prismadb";
 import { NextResponse } from "next/server";
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 
 export async function POST(req: Request) {
   try {
@@ -24,14 +24,14 @@ export async function POST(req: Request) {
     if (isMatchedEmail) {
       return new NextResponse("Email already registered", { status: 400 });
     } else {
-      const hashedPassword = await bcrypt.hash(password, 10);
+      // const hashedPassword = await bcrypt.hash(password, 10);
 
       const newUser = await prismadb.user.create({
         data: {
           email,
           name,
           role,
-          password: hashedPassword,
+          password,
         },
       });
       return NextResponse.json(newUser);

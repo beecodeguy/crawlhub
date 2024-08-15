@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import { Icons } from "./icons";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { signOut } from "next-auth/react";
 
 const MenuItems = [
   {
@@ -23,14 +24,24 @@ const MenuItems = [
     link: "/admin/blogs",
     icon: <Icons.blog />,
   },
+  {
+    title: "Logout",
+    icon: <Icons.logout />,
+  },
 ];
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
+  };
+
+  const logOut = async () => {
+    await signOut({ redirect: false });
+    router.push("/");
   };
 
   return (
@@ -52,11 +63,12 @@ const Sidebar = () => {
       <nav className="space-y-2">
         {MenuItems.map((item) => (
           <Link
-            href={item.link}
+            href={item.link ? item.link : "#"}
             className={`w-full flex items-center space-x-2 hover:bg-gray-200 py-2 px-2 rounded-lg text-gray-800 ${
               item.link === pathname ? "bg-gray-200" : ""
             }`}
             key={item.title}
+            onClick={item.title === "Logout" ? logOut : () => {}}
           >
             <span>{item.icon}</span>
             {!isCollapsed && (
