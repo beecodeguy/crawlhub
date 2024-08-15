@@ -1,3 +1,5 @@
+"use client";
+
 import TipTapEditor from "@/components/TipTapEditor";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
