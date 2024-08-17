@@ -5,7 +5,7 @@ import Link from "next/link";
 import axios from "axios";
 
 const Users = async () => {
-  const users = await axios.get("/api/users");
+  const users = await axios.get("/api/user");
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className="flex justify-between">

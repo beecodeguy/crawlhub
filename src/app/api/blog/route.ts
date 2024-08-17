@@ -14,3 +14,7 @@ export async function GET() {
     return new NextResponse("Internal error", { status: 500 });
   }
 }
+
+export async function POST() {}
+
+export async function DELETE() {}
