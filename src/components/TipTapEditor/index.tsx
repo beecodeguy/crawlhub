@@ -11,8 +11,12 @@ import TextStyle from "@tiptap/extension-text-style";
 
 import { useState } from "react";
 
-const TipTapEditor = () => {
-  const [content, setContent] = useState("");
+interface IProps {
+  onChange: (v: string) => void;
+  content: string;
+}
+
+const TipTapEditor: React.FC<IProps> = ({ onChange, content }) => {
 
   const editor = useEditor({
     extensions: [StarterKit, Underline, ImageResize, TextStyle, Image, Color],
@@ -33,7 +37,7 @@ const TipTapEditor = () => {
   }
 
   const handleChange = (newContent: string) => {
-    setContent(newContent);
+    onChange(newContent);
   };
 
   return (

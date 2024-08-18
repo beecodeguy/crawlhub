@@ -15,6 +15,16 @@ export async function GET() {
   }
 }
 
-export async function POST() {}
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const blog = await prismadb.blog.create({
+      data: { ...body, status: "pending" },
+    });
+    return NextResponse.json(blog);
+  } catch (err) {
+    return new NextResponse("Internal error", { status: 500 });
+  }
+}
 
 export async function DELETE() {}
