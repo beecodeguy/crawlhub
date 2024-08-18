@@ -9,18 +9,24 @@ import SelectComponent from "@/components/SelectComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { ErrorMessage } from "@hookform/error-message";
 
 const RegisterFormSchema = z.object({
   email: z.string().min(4),
   password: z.string().min(4),
-  name: z.string(),
-  role: z.string(),
+  name: z.string().min(4),
+  role: z.string().min(1),
 });
 
 type TRegisterForm = z.infer<typeof RegisterFormSchema>;
 
 const RegisterForm = () => {
-  const { register, control, handleSubmit } = useForm<TRegisterForm>({
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TRegisterForm>({
     resolver: zodResolver(RegisterFormSchema),
   });
 
@@ -42,6 +48,7 @@ const RegisterForm = () => {
           <Label>Name</Label>
           <div className="mt-2">
             <Input {...register("name")} name="name" />
+            <ErrorMessage errors={errors} name="name" />
           </div>
         </div>
 
@@ -54,6 +61,7 @@ const RegisterForm = () => {
               name="email"
               type="email"
             />
+            <ErrorMessage errors={errors} name="email" />
           </div>
         </div>
       </div>
@@ -63,6 +71,7 @@ const RegisterForm = () => {
           <Label>Password</Label>
           <div className="mt-2">
             <Input {...register("password")} name="password" type="password" />
+            <ErrorMessage errors={errors} name="password" />
           </div>
         </div>
 
@@ -83,6 +92,7 @@ const RegisterForm = () => {
                 />
               )}
             />
+            <ErrorMessage errors={errors} name="role" />
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ import ImageResize from "tiptap-extension-resize-image";
 import { Color } from "@tiptap/extension-color";
 import TextStyle from "@tiptap/extension-text-style";
 
-import { useState } from "react";
+import { memo } from "react";
 
 interface IProps {
   onChange: (v: string) => void;
@@ -17,7 +17,6 @@ interface IProps {
 }
 
 const TipTapEditor: React.FC<IProps> = ({ onChange, content }) => {
-
   const editor = useEditor({
     extensions: [StarterKit, Underline, ImageResize, TextStyle, Image, Color],
     immediatelyRender: true,

@@ -2,10 +2,11 @@ import { DataTable } from "@/components/table-component";
 import { UserColumns } from "./_components/UserColumn";
 import React from "react";
 import Link from "next/link";
-import axios from "axios";
+import { getUsers } from "@/actions/users";
 
 const Users = async () => {
-  const users = await axios.get("/api/user");
+  const users = await getUsers()
+  console.log({users})
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className="flex justify-between">
