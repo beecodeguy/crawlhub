@@ -19,7 +19,6 @@ interface IProps {
 const TipTapEditor: React.FC<IProps> = ({ onChange, content }) => {
   const editor = useEditor({
     extensions: [StarterKit, Underline, ImageResize, TextStyle, Image, Color],
-    immediatelyRender: true,
     editorProps: {
       attributes: {
         class:

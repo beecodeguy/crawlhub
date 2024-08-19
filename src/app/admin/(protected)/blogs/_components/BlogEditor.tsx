@@ -8,7 +8,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
-import { ErrorMessage } from "@hookform/error-message"
+import { ErrorMessage } from "@hookform/error-message";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const BlogFormSchema = z.object({
   title: z.string().min(4),
@@ -20,9 +22,10 @@ type TBlog = z.infer<typeof BlogFormSchema>;
 interface IProps {
   title?: string;
   content?: string;
+  id: string;
 }
 
-const BlogEditor: React.FC<IProps> = ({ content, title }) => {
+const BlogEditor: React.FC<IProps> = ({ content, title, id }) => {
   const {
     register,
     control,
@@ -36,8 +39,17 @@ const BlogEditor: React.FC<IProps> = ({ content, title }) => {
     },
   });
 
-  const onSubmit: SubmitHandler<TBlog> = async (data) => {
-    console.log(data);
+  const router = useRouter();
+
+  const onSubmit: SubmitHandler<TBlog> = async (d) => {
+    try {
+      const data = { ...d, userId: id };
+      await axios.post("/api/blog", data);
+      router.refresh();
+      router.push("/admin/blog");
+    } catch (e) {
+      //
+    }
   };
 
   return (

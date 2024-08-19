@@ -17,7 +17,7 @@ const AdminProtectedLayout = async ({
   return (
     <div className="flex">
       <Sidebar />
-      <div className="p-5 w-full">{children}</div>
+        <div className="p-5 w-full">{children}</div>
     </div>
   );
 };
