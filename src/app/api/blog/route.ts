@@ -7,6 +7,9 @@ export async function GET() {
       orderBy: {
         createdAt: "desc",
       },
+      include: {
+        User: true,
+      },
     });
 
     return NextResponse.json(blogs);

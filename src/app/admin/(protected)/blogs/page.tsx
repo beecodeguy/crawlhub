@@ -2,8 +2,10 @@ import { DataTable } from "@/components/table-component";
 import { BlogColumns } from "./_components/BlogColumn";
 import React from "react";
 import Link from "next/link";
+import { getBlogs } from "@/actions/blogs";
 
-const AdminBlogs = () => {
+const AdminBlogs = async () => {
+  const blogs = await getBlogs();
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className="flex justify-between">
@@ -15,19 +17,7 @@ const AdminBlogs = () => {
           + Create Blog
         </Link>
       </div>
-      <DataTable
-        searchKey="user"
-        columns={BlogColumns}
-        data={[
-          {
-            id: "1",
-            user: "Rujal Sapkota",
-            title: "r@gmail.com",
-            createdAt: "2015-02-11",
-            updatedAt: "2016-01-10",
-          },
-        ]}
-      />
+      <DataTable searchKey="user" columns={BlogColumns} data={blogs || []} />
     </div>
   );
 };

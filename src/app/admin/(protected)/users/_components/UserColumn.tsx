@@ -1,16 +1,9 @@
 "use client";
 
+import { User } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
 
-export type UserColumn = {
-  id: string;
-  email: string;
-  name: string;
-  role: string;
-  createdAt: string;
-};
-
-export const UserColumns: ColumnDef<UserColumn>[] = [
+export const UserColumns: ColumnDef<User>[] = [
   {
     accessorKey: "id",
     header: "ID",

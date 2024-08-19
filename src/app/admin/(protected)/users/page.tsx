@@ -5,8 +5,7 @@ import Link from "next/link";
 import { getUsers } from "@/actions/users";
 
 const Users = async () => {
-  const users = await getUsers()
-  console.log({users})
+  const users = await getUsers();
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className="flex justify-between">
@@ -18,19 +17,7 @@ const Users = async () => {
           + Register User
         </Link>
       </div>
-      <DataTable
-        searchKey="name"
-        columns={UserColumns}
-        data={[
-          {
-            id: "1",
-            name: "Rujal Sapkota",
-            email: "r@gmail.com",
-            role: "user",
-            createdAt: "2015-02-11",
-          },
-        ]}
-      />
+      <DataTable searchKey="name" columns={UserColumns} data={users || []} />
     </div>
   );
 };

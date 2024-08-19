@@ -2,16 +2,9 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import CellAction from "./cell-action";
+import { Blog } from "@prisma/client";
 
-export type BlogColumn = {
-  id: string;
-  title: string;
-  user: string;
-  createdAt: string;
-  updatedAt: string;
-};
-
-export const BlogColumns: ColumnDef<BlogColumn>[] = [
+export const BlogColumns: ColumnDef<Blog & { user: string }>[] = [
   {
     accessorKey: "id",
     header: "ID",
@@ -41,16 +34,14 @@ export const BlogColumns: ColumnDef<BlogColumn>[] = [
     header: "Created At",
     cell: ({ row }) => {
       const { createdAt } = row.original;
-      return <p className="font-medium text-gray-600">{createdAt}</p>;
+      return (
+        <p className="font-medium text-gray-600">{createdAt.toDateString()}</p>
+      );
     },
   },
   {
     accessorKey: "updatedAt",
     header: "Updated At",
-    cell: ({ row }) => {
-      const { updatedAt } = row.original;
-      return <p className="font-medium text-gray-600">{updatedAt}</p>;
-    },
   },
   {
     accessorKey: "action",

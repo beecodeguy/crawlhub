@@ -1,10 +1,11 @@
-import axiosInstance from "@/lib/axiosConfig";
+import { User } from "@prisma/client";
+import axios from "axios";
 
-export const getUsers = async () => {
+export const getUsers = async (): Promise<User[] | null> => {
   try {
-    const users = await axiosInstance.get("/api/user");
-    return users;
+    const users = await axios.get(process.env.BASE_URL + "/api/user");
+    return users.data;
   } catch (e) {
-    //
+    return null;
   }
 };
