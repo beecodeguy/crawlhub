@@ -1,6 +1,26 @@
 import prismadb from "@/lib/prismadb";
 import { NextResponse } from "next/server";
 
+export async function GET(
+  _: Request,
+  { params }: { params: { blogId: string } }
+) {
+  try {
+    const { blogId } = params;
+    const blog = await prismadb.blog.findUnique({
+      where: {
+        id: +blogId,
+      },
+      include: {
+        User: true,
+      },
+    });
+    return NextResponse.json(blog);
+  } catch (err) {
+    return new NextResponse("Internal error", { status: 500 });
+  }
+}
+
 export async function PATCH(
   req: Request,
   { params }: { params: { blogId: string } }

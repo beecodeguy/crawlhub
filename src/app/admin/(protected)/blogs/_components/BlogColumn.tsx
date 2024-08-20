@@ -30,6 +30,14 @@ export const BlogColumns: ColumnDef<Blog & { user: string }>[] = [
     },
   },
   {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) => {
+      const { status } = row.original;
+      return <p className="font-medium text-gray-600">{status}</p>;
+    },
+  },
+  {
     accessorKey: "createdAt",
     header: "Created At",
     cell: ({ row }) => {

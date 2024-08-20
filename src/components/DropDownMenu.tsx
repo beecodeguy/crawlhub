@@ -11,7 +11,11 @@ import {
 import { MoreHorizontal } from "lucide-react";
 
 interface IProps {
-  items: { id: number; render: (id: number) => React.ReactNode }[];
+  items: {
+    id: number;
+    render: (id: number) => React.ReactNode;
+    onClick?: () => void;
+  }[];
 }
 
 const DropDownMenu: React.FC<IProps> = ({ items }) => {
@@ -26,7 +30,7 @@ const DropDownMenu: React.FC<IProps> = ({ items }) => {
       <DropdownMenuContent className="bg-white" align="end">
         <DropdownMenuLabel>Actions</DropdownMenuLabel>
         {items.map((item) => (
-          <DropdownMenuItem className="hover:bg-gray-400" key={item.id}>
+          <DropdownMenuItem onClick={item.onClick} className="hover:bg-gray-400" key={item.id}>
             {item.render(item.id)}
           </DropdownMenuItem>
         ))}
