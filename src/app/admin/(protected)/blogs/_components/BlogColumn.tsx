@@ -48,6 +48,6 @@ export const BlogColumns: ColumnDef<Blog & { user: string }>[] = [
   {
     accessorKey: "action",
     header: "Action",
-    cell: ({ row }) => <CellAction />,
+    cell: ({ row }) => <CellAction id={row.original.id} />,
   },
 ];
