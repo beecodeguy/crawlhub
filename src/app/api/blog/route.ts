@@ -21,8 +21,9 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
+    const { title, content, userId } = body;
     const blog = await prismadb.blog.create({
-      data: { ...body, status: "pending" },
+      data: { title, content, userId, status: "pending" },
     });
     return NextResponse.json(blog);
   } catch (err) {

@@ -11,6 +11,7 @@ import * as z from "zod";
 import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { revalidatePath } from "@/lib/revalidate";
 
 const BlogFormSchema = z.object({
   title: z.string().min(4),
@@ -43,10 +44,10 @@ const BlogEditor: React.FC<IProps> = ({ content, title, id }) => {
 
   const onSubmit: SubmitHandler<TBlog> = async (d) => {
     try {
-      const data = { ...d, userId: id };
+      const data = { ...d, userId: +id };
       await axios.post("/api/blog", data);
-      router.refresh();
-      router.push("/admin/blog");
+      await revalidatePath("/admin/blogs");
+      router.push("/admin/blogs");
     } catch (e) {
       //
     }

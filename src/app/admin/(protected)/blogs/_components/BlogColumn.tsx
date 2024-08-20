@@ -34,18 +34,20 @@ export const BlogColumns: ColumnDef<Blog & { user: string }>[] = [
     header: "Created At",
     cell: ({ row }) => {
       const { createdAt } = row.original;
-      return (
-        <p className="font-medium text-gray-600">{createdAt.toDateString()}</p>
-      );
+      return <p className="font-medium text-gray-600">{String(createdAt)}</p>;
     },
   },
   {
     accessorKey: "updatedAt",
     header: "Updated At",
+    cell: ({ row }) => {
+      const { createdAt } = row.original;
+      return <p className="font-medium text-gray-600">{String(createdAt)}</p>;
+    },
   },
   {
     accessorKey: "action",
     header: "Action",
-    cell: () => <CellAction />,
+    cell: ({ row }) => <CellAction />,
   },
 ];
