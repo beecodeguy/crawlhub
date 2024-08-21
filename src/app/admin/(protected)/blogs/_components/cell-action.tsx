@@ -12,9 +12,10 @@ import { useSession } from "next-auth/react";
 
 interface IProps {
   id: number;
+  status: string;
 }
 
-const CellAction: React.FC<IProps> = ({ id }) => {
+const CellAction: React.FC<IProps> = ({ id, status }) => {
   const [open, setOpen] = useState(false);
 
   const router = useRouter();
@@ -43,18 +44,6 @@ const CellAction: React.FC<IProps> = ({ id }) => {
 
   const items = [
     {
-      id: 3,
-      render: () => <>Approve</>,
-      onClick: () => handleStatus("approve"),
-      roles: ["admin"],
-    },
-    {
-      id: 4,
-      render: () => <>Reject</>,
-      onClick: () => handleStatus("reject"),
-      roles: ["admin"],
-    },
-    {
       id: 1,
       render: () => (
         <>
@@ -74,7 +63,24 @@ const CellAction: React.FC<IProps> = ({ id }) => {
       onClick: handleDelete,
       roles: ["admin"],
     },
-  ].filter((item) => item.roles.includes(role));
+  ];
+
+  if (status === "pending") {
+    items.unshift(
+      {
+        id: 3,
+        render: () => <>Approve</>,
+        onClick: () => handleStatus("approve"),
+        roles: ["admin"],
+      },
+      {
+        id: 4,
+        render: () => <>Reject</>,
+        onClick: () => handleStatus("reject"),
+        roles: ["admin"],
+      }
+    );
+  }
 
   return (
     <>
@@ -84,7 +90,7 @@ const CellAction: React.FC<IProps> = ({ id }) => {
         onClose={() => setOpen(false)}
         onOpenChange={(b) => setOpen(b)}
       />
-      <DropDownMenu items={items} />
+      <DropDownMenu items={items.filter((item) => item.roles.includes(role))} />
     </>
   );
 };
