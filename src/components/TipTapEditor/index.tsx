@@ -9,8 +9,6 @@ import ImageResize from "tiptap-extension-resize-image";
 import { Color } from "@tiptap/extension-color";
 import TextStyle from "@tiptap/extension-text-style";
 
-import { memo } from "react";
-
 interface IProps {
   onChange: (v: string) => void;
   content: string;
@@ -19,12 +17,14 @@ interface IProps {
 const TipTapEditor: React.FC<IProps> = ({ onChange, content }) => {
   const editor = useEditor({
     extensions: [StarterKit, Underline, ImageResize, TextStyle, Image, Color],
+    // immediatelyRender: true,
     editorProps: {
       attributes: {
         class:
           "border border-gray-400 p-4 min-h-[20rem] max-h-[20rem] overflow-y-auto outline-none prose max-w-none",
       },
     },
+    content,
     onUpdate: ({ editor }) => {
       handleChange(editor.getHTML());
     },

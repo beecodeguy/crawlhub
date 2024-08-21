@@ -11,6 +11,7 @@ const EditBlog = async ({ params }: { params: { blogId: string } }) => {
         id={String(blog?.User?.id)}
         title={blog?.title}
         content={blog?.content}
+        blogId = {blog?.id}
       />
     </div>
   );

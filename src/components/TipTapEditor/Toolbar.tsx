@@ -127,7 +127,8 @@ const Toolbar = ({ editor }: Props) => {
           <Image className="w-5 h-5" />
         </button>
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             editor.chain().focus().toggleBulletList().run();
           }}
           className={
@@ -139,7 +140,8 @@ const Toolbar = ({ editor }: Props) => {
           <List className="w-5 h-5" />
         </button>
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             editor.chain().focus().toggleBlockquote().run();
           }}
           className={

@@ -23,10 +23,11 @@ type TBlog = z.infer<typeof BlogFormSchema>;
 interface IProps {
   title?: string;
   content?: string;
+  blogId?: number;
   id: string;
 }
 
-const BlogEditor: React.FC<IProps> = ({ content, title, id }) => {
+const BlogEditor: React.FC<IProps> = ({ blogId, content, title, id }) => {
   const {
     register,
     control,
@@ -45,7 +46,11 @@ const BlogEditor: React.FC<IProps> = ({ content, title, id }) => {
   const onSubmit: SubmitHandler<TBlog> = async (d) => {
     try {
       const data = { ...d, userId: +id };
-      await axios.post("/api/blog", data);
+      if (blogId) {
+        await axios.patch("/api/blog/" + blogId, data);
+      } else {
+        await axios.post("/api/blog", data);
+      }
       await revalidatePath("/admin/blogs");
       router.push("/admin/blogs");
     } catch (e) {

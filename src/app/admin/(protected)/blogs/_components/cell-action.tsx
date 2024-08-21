@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import AlertDialog from "@/components/AlertDialog";
 import { deleteBlog } from "@/actions/blogs";
 import { revalidatePath } from "@/lib/revalidate";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   id: number;
@@ -14,6 +15,8 @@ interface IProps {
 const CellAction: React.FC<IProps> = ({ id }) => {
   const [open, setOpen] = useState(false);
 
+  const router = useRouter();
+
   const handleDelete = () => {
     setOpen(true);
   };
@@ -21,7 +24,7 @@ const CellAction: React.FC<IProps> = ({ id }) => {
   const onDelete = async () => {
     try {
       await deleteBlog(id);
-      revalidatePath('/admin/blogs')
+      revalidatePath("/admin/blogs");
       setOpen(false);
     } catch (err) {}
   };
@@ -43,6 +46,7 @@ const CellAction: React.FC<IProps> = ({ id }) => {
                 <Edit className="mr-2 h-4 w-4" /> Update
               </>
             ),
+            onClick: () => router.push("/admin/blogs/edit/" + id),
           },
           {
             id: 2,

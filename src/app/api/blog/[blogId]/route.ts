@@ -28,12 +28,19 @@ export async function PATCH(
   try {
     const body = await req.json();
     const { blogId } = params;
+    await prismadb.blog.update({
+      where: {
+        id: +blogId,
+      },
+      data: { ...body },
+    });
     const blog = await prismadb.blog.update({
       where: {
         id: +blogId,
       },
       data: { ...body },
     });
+    console.log("successful");
     return NextResponse.json(blog);
   } catch (err) {
     return new NextResponse("Internal error", { status: 500 });
