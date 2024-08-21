@@ -15,6 +15,7 @@ interface IProps {
     id: number;
     render: (id: number) => React.ReactNode;
     onClick?: () => void;
+    roles?:string[]
   }[];
 }
 

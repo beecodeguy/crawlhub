@@ -8,6 +8,7 @@ import { deleteBlog } from "@/actions/blogs";
 import { revalidatePath } from "@/lib/revalidate";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { useSession } from "next-auth/react";
 
 interface IProps {
   id: number;
@@ -17,6 +18,9 @@ const CellAction: React.FC<IProps> = ({ id }) => {
   const [open, setOpen] = useState(false);
 
   const router = useRouter();
+  const { data } = useSession();
+
+  const role = data?.user.role;
 
   const handleDelete = () => {
     setOpen(true);
@@ -37,6 +41,41 @@ const CellAction: React.FC<IProps> = ({ id }) => {
     } catch (err) {}
   };
 
+  const items = [
+    {
+      id: 3,
+      render: () => <>Approve</>,
+      onClick: () => handleStatus("approve"),
+      roles: ["admin"],
+    },
+    {
+      id: 4,
+      render: () => <>Reject</>,
+      onClick: () => handleStatus("reject"),
+      roles: ["admin"],
+    },
+    {
+      id: 1,
+      render: () => (
+        <>
+          <Edit className="mr-2 h-4 w-4" /> Update
+        </>
+      ),
+      onClick: () => router.push("/admin/blogs/edit/" + id),
+      roles: ["admin", "user"],
+    },
+    {
+      id: 2,
+      render: () => (
+        <>
+          <Trash className="mr-2 h-4 w-4" /> Delete
+        </>
+      ),
+      onClick: handleDelete,
+      roles: ["admin"],
+    },
+  ].filter((item) => item.roles.includes(role));
+
   return (
     <>
       <AlertDialog
@@ -45,38 +84,7 @@ const CellAction: React.FC<IProps> = ({ id }) => {
         onClose={() => setOpen(false)}
         onOpenChange={(b) => setOpen(b)}
       />
-      <DropDownMenu
-        items={[
-          {
-            id: 3,
-            render: () => <>Approve</>,
-            onClick: () => handleStatus("approve"),
-          },
-          {
-            id: 4,
-            render: () => <>Reject</>,
-            onClick: () => handleStatus("reject"),
-          },
-          {
-            id: 1,
-            render: () => (
-              <>
-                <Edit className="mr-2 h-4 w-4" /> Update
-              </>
-            ),
-            onClick: () => router.push("/admin/blogs/edit/" + id),
-          },
-          {
-            id: 2,
-            render: () => (
-              <>
-                <Trash className="mr-2 h-4 w-4" /> Delete
-              </>
-            ),
-            onClick: handleDelete,
-          },
-        ]}
-      />
+      <DropDownMenu items={items} />
     </>
   );
 };
