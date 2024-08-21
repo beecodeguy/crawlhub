@@ -1,4 +1,5 @@
 import Sidebar from "@/components/sidebar";
+import NextAuthSessions from "@/providers/NextAuthSessions";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -15,10 +16,12 @@ const AdminProtectedLayout = async ({
   }
 
   return (
-    <div className="flex">
-      <Sidebar />
+    <NextAuthSessions>
+      <div className="flex">
+        <Sidebar />
         <div className="p-5 w-full">{children}</div>
-    </div>
+      </div>
+    </NextAuthSessions>
   );
 };
 

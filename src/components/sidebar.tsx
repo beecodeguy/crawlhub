@@ -6,33 +6,38 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const MenuItems = [
   {
     title: "Dashboard",
     link: "/admin/dashboard",
     icon: <Icons.home />,
+    role: ["user", "admin"],
   },
   {
     title: "Users",
     link: "/admin/users",
     icon: <Icons.users />,
+    role: ["admin"],
   },
   {
     title: "Blogs",
     link: "/admin/blogs",
     icon: <Icons.blog />,
+    role: ["user", "admin"],
   },
   {
     title: "Logout",
     icon: <Icons.logout />,
+    role: ["user", "admin"],
   },
 ];
 
 const Sidebar = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const session = useSession();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = () => {
@@ -61,28 +66,30 @@ const Sidebar = () => {
         </button>
       </div>
       <nav className="space-y-2">
-        {MenuItems.map((item) => (
-          <Link
-            href={item.link ? item.link : "#"}
-            className={`w-full flex items-center space-x-2 hover:bg-gray-200 py-2 px-2 rounded-lg text-gray-800 ${
-              item.link === pathname ? "bg-gray-200" : ""
-            }`}
-            key={item.title}
-            onClick={item.title === "Logout" ? logOut : () => {}}
-          >
-            <span>{item.icon}</span>
-            {!isCollapsed && (
-              <motion.span
-                className="text-sm font-medium"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              >
-                {item.title}
-              </motion.span>
-            )}
-          </Link>
-        ))}
+        {MenuItems.filter((i) => i.role.includes(session.data?.user.role)).map(
+          (item) => (
+            <Link
+              href={item.link ? item.link : "#"}
+              className={`w-full flex items-center space-x-2 hover:bg-gray-200 py-2 px-2 rounded-lg text-gray-800 ${
+                item.link === pathname ? "bg-gray-200" : ""
+              }`}
+              key={item.title}
+              onClick={item.title === "Logout" ? logOut : () => {}}
+            >
+              <span>{item.icon}</span>
+              {!isCollapsed && (
+                <motion.span
+                  className="text-sm font-medium"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {item.title}
+                </motion.span>
+              )}
+            </Link>
+          )
+        )}
       </nav>
     </motion.aside>
   );

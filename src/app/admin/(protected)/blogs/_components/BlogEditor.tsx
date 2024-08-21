@@ -12,6 +12,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { revalidatePath } from "@/lib/revalidate";
+import { useSession } from "next-auth/react";
 
 const BlogFormSchema = z.object({
   title: z.string().min(4),
@@ -23,11 +24,10 @@ type TBlog = z.infer<typeof BlogFormSchema>;
 interface IProps {
   title?: string;
   content?: string;
-  blogId?: number;
-  id: string;
+  blogId?: string|number;
 }
 
-const BlogEditor: React.FC<IProps> = ({ blogId, content, title, id }) => {
+const BlogEditor: React.FC<IProps> = ({ blogId, content, title }) => {
   const {
     register,
     control,
@@ -42,10 +42,11 @@ const BlogEditor: React.FC<IProps> = ({ blogId, content, title, id }) => {
   });
 
   const router = useRouter();
+  const session = useSession();
 
   const onSubmit: SubmitHandler<TBlog> = async (d) => {
     try {
-      const data = { ...d, userId: +id };
+      const data = { ...d, userId: +session?.data?.user?.id };
       if (blogId) {
         await axios.patch("/api/blog/" + blogId, data);
       } else {

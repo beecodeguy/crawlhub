@@ -7,6 +7,7 @@ import AlertDialog from "@/components/AlertDialog";
 import { deleteBlog } from "@/actions/blogs";
 import { revalidatePath } from "@/lib/revalidate";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 interface IProps {
   id: number;
@@ -29,6 +30,13 @@ const CellAction: React.FC<IProps> = ({ id }) => {
     } catch (err) {}
   };
 
+  const handleStatus = async (status: string) => {
+    try {
+      await axios.patch("/api/blog/" + id, { status });
+      revalidatePath("/admin/blogs");
+    } catch (err) {}
+  };
+
   return (
     <>
       <AlertDialog
@@ -39,6 +47,16 @@ const CellAction: React.FC<IProps> = ({ id }) => {
       />
       <DropDownMenu
         items={[
+          {
+            id: 3,
+            render: () => <>Approve</>,
+            onClick: () => handleStatus("approve"),
+          },
+          {
+            id: 4,
+            render: () => <>Reject</>,
+            onClick: () => handleStatus("reject"),
+          },
           {
             id: 1,
             render: () => (

@@ -8,10 +8,9 @@ const EditBlog = async ({ params }: { params: { blogId: string } }) => {
     <div className="flex flex-col gap-3">
       <h1>Edit Blog</h1>
       <BlogEditor
-        id={String(blog?.User?.id)}
         title={blog?.title}
         content={blog?.content}
-        blogId = {blog?.id}
+        blogId={params.blogId}
       />
     </div>
   );
