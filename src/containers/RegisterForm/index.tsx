@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { ErrorMessage } from "@hookform/error-message";
+import ReCaptcha from 'react-google-recaptcha'
 
 const RegisterFormSchema = z.object({
   email: z.string().min(4),
@@ -105,6 +106,7 @@ const RegisterForm = () => {
           Register
         </Button>
       </div>
+      <ReCaptcha sitekey="" />
     </form>
   );
 };
