@@ -15,6 +15,9 @@ import {
   Code,
   Image,
   Heading1,
+  AlignJustify,
+  AlignCenter,
+  AlignLeft,
 } from "lucide-react";
 
 type Props = {
@@ -30,6 +33,14 @@ const Toolbar = ({ editor }: Props) => {
       editor.chain().focus().setImage({ src: url }).run();
     }
   }, [editor]);
+
+  const handleTextAlign = (textAlign: string) => {
+    if (editor.isActive({ textAlign })) {
+      editor.chain().focus().unsetTextAlign().run();
+    } else {
+      editor.chain().focus().setTextAlign(textAlign).run();
+    }
+  };
 
   return (
     <div className="px-4 py-3 rounded-tl-md rounded-tr-md flex justify-between items-start gap-5 w-full flex-wrap border border-gray-700">
@@ -72,6 +83,32 @@ const Toolbar = ({ editor }: Props) => {
           }
         >
           <Underline className="w-5 h-5" />
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleTextAlign("center");
+          }}
+          className={
+            editor.isActive({ textAlign: "center" })
+              ? "bg-sky-700 text-white rounded-lg p-1"
+              : "bg-gray-200 rounded hover:bg-sky-700 p-1"
+          }
+        >
+          <AlignCenter className="w-5 h-5" />
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleTextAlign("justify");
+          }}
+          className={
+            editor.isActive({ textAlign: "justify" })
+              ? "bg-sky-700 text-white rounded-lg p-1"
+              : "bg-gray-200 rounded hover:bg-sky-700 p-1"
+          }
+        >
+          <AlignJustify className="w-5 h-5" />
         </button>
         <button
           onClick={(e) => {

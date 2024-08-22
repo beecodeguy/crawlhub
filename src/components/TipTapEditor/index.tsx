@@ -8,6 +8,7 @@ import Image from "@tiptap/extension-image";
 import ImageResize from "tiptap-extension-resize-image";
 import { Color } from "@tiptap/extension-color";
 import TextStyle from "@tiptap/extension-text-style";
+import TextAlign from "@tiptap/extension-text-align";
 
 interface IProps {
   onChange: (v: string) => void;
@@ -16,7 +17,17 @@ interface IProps {
 
 const TipTapEditor: React.FC<IProps> = ({ onChange, content }) => {
   const editor = useEditor({
-    extensions: [StarterKit, Underline, ImageResize, TextStyle, Image, Color],
+    extensions: [
+      StarterKit,
+      Underline,
+      ImageResize,
+      TextStyle,
+      Image,
+      Color,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
+    ],
     // immediatelyRender: true,
     editorProps: {
       attributes: {
@@ -43,7 +54,7 @@ const TipTapEditor: React.FC<IProps> = ({ onChange, content }) => {
       <Toolbar editor={editor} content={content} />
       <EditorContent
         className="cursor-text"
-        style={{ whiteSpace: "pre-line" }}
+        style={{ whiteSpace: "pre-line"}}
         editor={editor}
       />
     </div>

@@ -781,10 +781,10 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-strike/-/extension-strike-2.6.1.tgz#1e9a3075f77cd9eb58206179b8cf2175a95fb83d"
   integrity sha512-sKlV31hFz6DCbjXkkKXjzSxr6xs4HOQS6Yd6nDhqPA9o4tB6lh3eSaHFTUUMi3PBWA2AOhrVLxD1lMlPI3rROw==
 
-"@tiptap/extension-text-align@^2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@tiptap/extension-text-align/-/extension-text-align-2.6.1.tgz#336df8ef63bdb490c931a87f993b9c3a0eac2a69"
-  integrity sha512-2a6WGPV8EWN0Ivk5+syJWUF11nviJWHf2uHz1scJP2oo/JurUqCg9iEJn5Aon8TDPT/mUF4rm4bzCdwrkFGAdw==
+"@tiptap/extension-text-align@^2.6.5":
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-text-align/-/extension-text-align-2.6.5.tgz#3e09c5adcace351ca5387ac9b764e5aac76ca6a6"
+  integrity sha512-07FVqMyWRY3vyyOj4oRD71kYAekOajbgGbY5B6ZqYQjqEYjUei7OF6/+D+UafPtWXkysyuw0UuR2hV5VqeutHA==
 
 "@tiptap/extension-text-style@^2.6.1":
   version "2.6.1"
