@@ -17,7 +17,6 @@ import {
   Heading1,
   AlignJustify,
   AlignCenter,
-  AlignLeft,
 } from "lucide-react";
 
 type Props = {
@@ -26,13 +25,17 @@ type Props = {
 };
 
 const Toolbar = ({ editor }: Props) => {
-  const addImage = useCallback(() => {
-    const url = window.prompt("URL");
+  const addImage = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      const url = window.prompt("URL");
 
-    if (url) {
-      editor.chain().focus().setImage({ src: url }).run();
-    }
-  }, [editor]);
+      if (url) {
+        editor.chain().focus().setImage({ src: url }).run();
+      }
+    },
+    [editor]
+  );
 
   const handleTextAlign = (textAlign: string) => {
     if (editor.isActive({ textAlign })) {

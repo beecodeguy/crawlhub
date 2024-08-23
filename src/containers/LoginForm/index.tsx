@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,6 +7,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const loginFormSchema = z.object({
   email: z.string().min(4),
@@ -16,13 +17,19 @@ const loginFormSchema = z.object({
 type TLoginForm = z.infer<typeof loginFormSchema>;
 
 const LoginForm = () => {
-  const { register, handleSubmit } = useForm<TLoginForm>({
+  const { register, handleSubmit, control } = useForm<TLoginForm>({
     resolver: zodResolver(loginFormSchema),
   });
 
+  const recaptchaRef = useRef<any>(null);
+
   const router = useRouter();
 
-  const onSubmit: SubmitHandler<TLoginForm> = (data) => {
+  const onSubmit: SubmitHandler<TLoginForm> = async (data) => {
+    const token = await recaptchaRef.current.getValue();
+    if (!token) {
+      return;
+    }
     const { email, password } = data;
     signIn("credentials", {
       email,
@@ -39,27 +46,22 @@ const LoginForm = () => {
       });
   };
 
+  // const onChangeRecaptcha = (token: string | null) => {
+  //   console.log(token);
+  // };
+
   return (
     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <Label>
-          Email address
-        </Label>
+        <Label>Email address</Label>
         <div className="mt-2">
-          <Input
-            {...register("email")}
-            id="email"
-            name="email"
-            type="email"
-          />
+          <Input {...register("email")} id="email" name="email" type="email" />
         </div>
       </div>
 
       <div>
         <div className="flex items-center justify-between">
-          <Label>
-            Password
-          </Label>
+          <Label>Password</Label>
           <div className="text-sm">
             <a
               href="#"
@@ -87,6 +89,11 @@ const LoginForm = () => {
           Sign in
         </button>
       </div>
+
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey="6LclYy0qAAAAAN-RJ6ajLzWa5y7y-sqj17GOqACN"
+      />
     </form>
   );
 };
