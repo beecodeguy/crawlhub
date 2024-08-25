@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "@/assets/styles/main.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const verdana = localFont({
+  src: "../assets/fonts/VerdanaPro-Regular.ttf",
+  variable: "--font-verdana-pro",
+});
 
 export const metadata: Metadata = {
   title: "Crawler Hub",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={verdana.className}>{children}</body>
     </html>
   );
 }

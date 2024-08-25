@@ -5,7 +5,7 @@ export default function Home() {
       <section>
         <h1>Body</h1>
       </section>
-      <footer className="h-[340px] bg-[#202020]">
+      <footer className="h-[340px] bg-primary text-white px-[80px] py-[48px]">
         Footer
       </footer>
     </main>
