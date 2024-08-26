@@ -1,3 +1,5 @@
+import Footer from "@/components/containers/Footer";
+import Header from "@/components/containers/Header";
 import React from "react";
 
 const WebPageLayout = ({
@@ -7,17 +9,9 @@ const WebPageLayout = ({
 }>) => {
   return (
     <main>
-      <nav className="flex px-5 py-5">Navbar</nav>
+      <Header />
       <section>{children}</section>
-      <footer className="h-[340px] bg-primary text-white px-[80px] py-[48px]">
-        <div className="flex gap-5 items-center justify-between">
-          <span className="typography-h4">Footer</span>
-          <div>Solutions</div>
-          <div>Platform</div>
-          <div>Industries</div>
-          <div>Platform</div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 };
