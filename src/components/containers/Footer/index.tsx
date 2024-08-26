@@ -45,13 +45,13 @@ const Footer = () => {
           ]}
         />
       </div>
-      <div className="h-1 bg-[#F2F2F2]" />
+      <div className="h-[1px] bg-[#F2F2F2]" />
       <div className="flex justify-between">
         <div className="flex gap-2">
-          <span>Terms of Service</span>
-          <span>Privacy Policy</span>
+          <span className="underline">Terms of Service</span>
+          <span className="underline">Privacy Policy</span>
         </div>
-        <div>2024 CrawlerHub. All rights reserved.</div>
+        <div>&copy; 2024 CrawlerHub. All rights reserved.</div>
         <div>Icons</div>
       </div>
     </footer>
