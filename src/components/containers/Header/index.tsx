@@ -15,7 +15,7 @@ const Header = () => {
       </div>
       <div className="flex gap-5 items-center">
         <Link href="">Contact</Link>
-        <Button className="btn-outline">Sign In</Button>
+        <Button variant="outline">Sign In</Button>
       </div>
     </nav>
   );
