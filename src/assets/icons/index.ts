@@ -1,5 +1,3 @@
-import FaceBookIcon from "./facebook.png";
-import LinkedInIcon from "./linkedin.png";
-import TwitterIcon from "./twitter.png";
-
-export { FaceBookIcon, LinkedInIcon, TwitterIcon };
+export { default as FaceBookIcon } from "./facebook.png";
+export { default as LinkedInIcon } from "./linkedin.png";
+export { default as TwitterIcon } from "./twitter.png";
