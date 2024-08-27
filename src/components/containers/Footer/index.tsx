@@ -54,7 +54,7 @@ const Footer = () => {
           <span className="underline">Privacy Policy</span>
         </div>
         <div>&copy; 2024 CrawlerHub. All rights reserved.</div>
-        <div className="flex gap-2">
+        <div className="flex gap-[24px]">
           <Image src={FaceBookIcon} height={10} width={20} alt="Facebook" />
           <Image src={LinkedInIcon} height={10} width={20} alt="LinkedIn" />
           <Image src={TwitterIcon} height={10} width={20} alt="Twitter" />

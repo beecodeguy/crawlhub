@@ -8,9 +8,9 @@ const WebPageLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <main>
+    <main className="flex flex-col gap-[56px]">
       <Header />
-      <section>{children}</section>
+      <section className="px-[80px]">{children}</section>
       <Footer />
     </main>
   );
