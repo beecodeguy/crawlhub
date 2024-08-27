@@ -5,7 +5,7 @@ import { FaceBookIcon, LinkedInIcon, TwitterIcon } from "@/assets/icons";
 
 const Footer = () => {
   return (
-    <footer className="h-[340px] bg-primary text-white px-[80px] py-6 flex flex-col gap-4">
+    <footer className="bg-primary text-white px-[80px] py-6 flex flex-col gap-3">
       <div className="flex gap-5 justify-between">
         <span className="typography-h4">CrawlerHub</span>
         <FooterColumn
@@ -47,7 +47,7 @@ const Footer = () => {
           ]}
         />
       </div>
-      <div className="h-[1px] bg-white" />
+      <div className="h-[1px] bg-light-grey" />
       <div className="flex justify-between text-[14px] leading-[20px]">
         <div className="flex gap-2">
           <span className="underline">Terms of Service</span>
