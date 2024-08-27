@@ -5,7 +5,7 @@ import { FaceBookIcon, LinkedInIcon, TwitterIcon } from "@/assets/icons";
 
 const Footer = () => {
   return (
-    <footer className="h-[340px] bg-primary text-white px-[80px] py-[48px] flex flex-col gap-4">
+    <footer className="h-[340px] bg-primary text-white px-[80px] py-6 flex flex-col gap-4">
       <div className="flex gap-5 justify-between">
         <span className="typography-h4">CrawlerHub</span>
         <FooterColumn
@@ -47,14 +47,14 @@ const Footer = () => {
           ]}
         />
       </div>
-      <div className="h-[1px] bg-[#F2F2F2]" />
+      <div className="h-[1px] bg-white" />
       <div className="flex justify-between text-[14px] leading-[20px]">
         <div className="flex gap-2">
           <span className="underline">Terms of Service</span>
           <span className="underline">Privacy Policy</span>
         </div>
         <div>&copy; 2024 CrawlerHub. All rights reserved.</div>
-        <div className="flex gap-[24px]">
+        <div className="flex gap-4">
           <Image src={FaceBookIcon} height={10} width={20} alt="Facebook" />
           <Image src={LinkedInIcon} height={10} width={20} alt="LinkedIn" />
           <Image src={TwitterIcon} height={10} width={20} alt="Twitter" />
