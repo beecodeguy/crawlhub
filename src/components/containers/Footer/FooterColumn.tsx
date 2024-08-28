@@ -13,10 +13,10 @@ interface IProps {
 const FooterColumn: React.FC<IProps> = ({ name, linkList }) => {
   return (
     <div>
-      <div className="uppercase">{name}</div>
-      <div className="flex flex-col mt-4 gap-2">
+      <div className="uppercase typography-h5">{name}</div>
+      <div className="flex flex-col mt-3 gap-2">
         {linkList.map((list) => (
-          <Link href={list.link} key={list.id} className="text-xs">
+          <Link href={list.link} key={list.id} className="text-sm">
             {list.name}
           </Link>
         ))}
