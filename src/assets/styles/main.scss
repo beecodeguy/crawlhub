@@ -9,6 +9,10 @@
   --radius: 0.5rem;
 }
 
+.page-container {
+  @apply px-[80px] lg:px-[100px] 2xl:px-[100px] 3xl:px-[600px];
+}
+
 // body {
 //   font-family: Verdana;
 // }

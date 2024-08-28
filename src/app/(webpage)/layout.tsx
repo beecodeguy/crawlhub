@@ -10,7 +10,7 @@ const WebPageLayout = ({
   return (
     <main className="flex flex-col gap-7">
       <Header />
-      <section className="px-[80px]">{children}</section>
+      <section className="page-container">{children}</section>
       <Footer />
     </main>
   );

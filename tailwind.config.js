@@ -31,7 +31,7 @@ module.exports = {
     },
     extend: {
       screens: {
-        sm: "480",
+        sm: "640px",
         // => @media (min-width: 640px) { ... }
 
         md: "768px",
@@ -42,6 +42,9 @@ module.exports = {
 
         "2xl": "1536px",
         // => @media (min-width: 1536px) { ... }
+
+        "3xl": "2080px",
+        // => @media (min-width: 2560px) { ... }
       },
       colors: {
         border: "hsl(var(--border))",

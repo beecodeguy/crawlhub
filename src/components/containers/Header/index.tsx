@@ -5,7 +5,7 @@ import NavItems from "./NavItems";
 
 const Header = () => {
   return (
-    <nav className="flex px-[80px] py-4 justify-between items-center">
+    <nav className="page-container flex py-4 justify-between items-center">
       <span className="typography-h4 text-primary">CrawlerHub</span>
       <NavItems />
       <div className="flex gap-5 items-center">

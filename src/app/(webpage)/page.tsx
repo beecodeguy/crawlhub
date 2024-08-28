@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-[128px]">
       {/* Manage Crawlers */}
-      <div className="flex">
+      <div className="flex justify-between items-center">
         <div>
           <div className="flex flex-col gap-4">
             <div className="typography-h1">
@@ -21,9 +21,7 @@ export default function Home() {
           </div>
           <Button className="mt-6">Get Started</Button>
         </div>
-        <div>
-          <Image src={BannerOne} height={398} width={584} alt="" />
-        </div>
+        <Image src={BannerOne} height={398} width={584} alt="" />
       </div>
       {/* Why Choose Crawler Hub */}
       <div>Why Choose Crawlerub?</div>
