@@ -5,7 +5,7 @@ import React from "react";
 const Header = () => {
   return (
     <nav className="flex px-[80px] py-4 justify-between items-center">
-      <div>CrawlerHub</div>
+      <span className="typography-h4 text-primary">CrawlerHub</span>
       <div className="flex items-center gap-5">
         <Link href="">Home</Link>
         <Link href="">About Us</Link>
