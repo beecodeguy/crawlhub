@@ -9,9 +9,7 @@ const WebPageLayout = ({
 }>) => {
   return (
     <main>
-      <Header />
-      <section>{children}</section>
-      <Footer />
+      {children}
     </main>
   );
 };

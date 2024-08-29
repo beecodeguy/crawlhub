@@ -1,4 +1,11 @@
+import {
+  Support24,
+  TailoredPrecision,
+  TransparentPricing,
+  UserCentric,
+} from "@/assets/icons";
 import Card from "@/components/Card";
+import IconWrapper from "@/components/IconWrapper";
 import Image from "next/image";
 import React from "react";
 
@@ -8,13 +15,17 @@ const WhyChooseCrawler = () => {
       <span className="typography-h2">Why Choose CrawlerHub?</span>
       <div className="flex gap-3">
         <Card>
-          <div>
-            <Image src={""} height={34} width={34} alt="" />
-          </div>
+          <IconWrapper icon={TailoredPrecision} />
         </Card>
-        <Card>sdf</Card>
-        <Card>sdf</Card>
-        <Card>sdf</Card>
+        <Card>
+          <IconWrapper icon={Support24} />
+        </Card>
+        <Card>
+          <IconWrapper icon={UserCentric} />
+        </Card>
+        <Card>
+          <IconWrapper icon={TransparentPricing} />
+        </Card>
       </div>
     </div>
   );
