@@ -28,6 +28,9 @@ module.exports = {
     },
     extend: {
       screens: {
+        xs: "480px",
+        // => @media (min-width: 480px) { ... }
+
         sm: "640px",
         // => @media (min-width: 640px) { ... }
 
@@ -51,6 +54,7 @@ module.exports = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        "bg-white": "var(--bg-white)",
         foreground: "hsl(var(--foreground))",
         "light-grey": "var(--light-grey)",
         primary: {
