@@ -7,13 +7,13 @@ import WhatWouldYou from "./_components/WhatWouldYou";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <>
       <ManageCrawlers />
       <WhyChooseCrawler />
       <OurServices />
       <ContactUsBanner />
       <OurProcess />
       <WhatWouldYou />
-    </div>
+    </>
   );
 }
