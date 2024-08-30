@@ -11,7 +11,8 @@ import React from "react";
 
 const WhatWouldYou = () => {
   return (
-    <div className="flex flex-col gap-[40px] items-center bg-light-grey py-5">
+    <div className="pb-[56px]">
+      <div className="flex flex-col gap-[40px] items-center bg-light-grey py-5">
       <span className="typography-h2">What Would You Like to Do?</span>
       <div className="flex gap-3">
         <Card className="h-[224px] w-[302px]">
@@ -51,6 +52,7 @@ const WhatWouldYou = () => {
           </div>
         </Card>
       </div>
+    </div>
     </div>
   );
 };

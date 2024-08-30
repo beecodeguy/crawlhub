@@ -5,7 +5,7 @@ import { FaceBookIcon, LinkedInIcon, TwitterIcon } from "@/assets/icons";
 
 const Footer = () => {
   return (
-    <footer className="page-container bg-primary text-white py-6 flex flex-col gap-3">
+    <footer className="page-container bg-primary text-white py-6 flex flex-col gap-3 mt-[72px]">
       <div className="flex gap-5 justify-between">
         <span className="typography-h4">CrawlerHub</span>
         <FooterColumn
