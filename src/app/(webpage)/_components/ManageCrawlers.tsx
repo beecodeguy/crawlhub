@@ -5,7 +5,7 @@ import React from "react";
 
 const ManageCrawlers = () => {
   return (
-    <div className="flex items-center">
+    <div className="page-container flex items-center">
       <div>
         <div className="flex flex-col gap-4">
           <div className="typography-h1">
