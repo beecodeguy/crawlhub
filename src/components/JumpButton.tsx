@@ -4,14 +4,14 @@ import Link from "next/link";
 import React from "react";
 
 interface IProps {
-  href: string;
+  href?: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement> | undefined;
   label: string;
 }
 
 const JumpButton: React.FC<IProps> = ({ href = "", onClick, label }) => {
   return (
-    <Link href={href} onClick={onClick} className="text-primary typography-h5">
+    <Link href={href} onClick={onClick} className="text-primary typography-h5 font-bold">
       {label}-&gt;
     </Link>
   );

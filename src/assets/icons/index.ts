@@ -5,3 +5,8 @@ export { default as TailoredPrecision } from "./tailored_precision.png";
 export { default as Support24 } from "./support_24hr.png";
 export { default as UserCentric } from "./user_centric_experience.png";
 export { default as TransparentPricing } from "./transparent_pricing.png";
+export { default as Customized } from "./customized.png";
+export { default as SupportAgent } from "./support_agent.png";
+export { default as Explore } from "./explore.png";
+export { default as TechComputer } from "./tech_computer.png";
+
