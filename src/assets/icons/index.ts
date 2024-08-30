@@ -10,5 +10,10 @@ export { default as SupportAgent } from "./support_agent.png";
 export { default as Explore } from "./explore.png";
 export { default as TechComputer } from "./tech_computer.png";
 export { default as InfoIcon } from "./info_icon.png";
+export { default as SettingIcon } from "./settings_icon.png";
+export { default as SpiderIcon } from "./spider_icon.png";
+export { default as DataDeliveryIcon } from "./data_delivery_icon.png";
+
+
 
 

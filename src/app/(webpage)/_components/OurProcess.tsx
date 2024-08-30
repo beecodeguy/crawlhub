@@ -1,4 +1,9 @@
-import { InfoIcon } from "@/assets/icons";
+import {
+  DataDeliveryIcon,
+  InfoIcon,
+  SettingIcon,
+  SpiderIcon,
+} from "@/assets/icons";
 import IconWrapper from "@/components/IconWrapper";
 import JumpButton from "@/components/JumpButton";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -39,22 +44,22 @@ const OurProcess = () => {
         source such as web URL from which you seek to extract the data."
           />
           <ProcessInfo
-            icon={InfoIcon}
-            title="Project Information"
-            description="Initiate the process by providing the project information and data
-        source such as web URL from which you seek to extract the data."
+            icon={SettingIcon}
+            title="Initial Assessment"
+            description="A meticulous, no-obligation evaluation of the data requirement, 
+size and website’s complexity shall be assessed"
           />
           <ProcessInfo
-            icon={InfoIcon}
-            title="Project Information"
-            description="Initiate the process by providing the project information and data
-        source such as web URL from which you seek to extract the data."
+            icon={SpiderIcon}
+            title="Customized Quote"
+            description="Following the assessment, a precise and transparent quote will be 
+issued, tailored to the specific project needs."
           />
           <ProcessInfo
-            icon={InfoIcon}
-            title="Project Information"
-            description="Initiate the process by providing the project information and data
-      source such as web URL from which you seek to extract the data."
+            icon={DataDeliveryIcon}
+            title="Data Delivery"
+            description="Upon approval, data will be extracted and delivered in the preferred 
+format within the agreed timeframe."
           />
         </div>
       </div>
