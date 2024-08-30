@@ -9,4 +9,6 @@ export { default as Customized } from "./customized.png";
 export { default as SupportAgent } from "./support_agent.png";
 export { default as Explore } from "./explore.png";
 export { default as TechComputer } from "./tech_computer.png";
+export { default as InfoIcon } from "./info_icon.png";
+
 

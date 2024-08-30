@@ -9,7 +9,13 @@ interface IProps {
 const IconWrapper: React.FC<IProps> = ({ icon }) => {
   return (
     <div className="p-1 bg-[#FAF4FF] h-fit w-fit rounded-full grid place-items-center">
-      <Image src={icon} alt="" height={24} width={24} />
+      <Image
+        src={icon}
+        alt=""
+        height={24}
+        width={24}
+        style={{ minHeight: 24, minWidth: 24 }}
+      />
     </div>
   );
 };

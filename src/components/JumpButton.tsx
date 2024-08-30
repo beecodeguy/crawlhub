@@ -7,12 +7,22 @@ interface IProps {
   href?: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement> | undefined;
   label: string;
+  className?: string;
 }
 
-const JumpButton: React.FC<IProps> = ({ href = "", onClick, label }) => {
+const JumpButton: React.FC<IProps> = ({
+  href = "",
+  onClick,
+  label,
+  className,
+}) => {
   return (
-    <Link href={href} onClick={onClick} className="text-primary typography-h5 font-bold">
-      {label}-&gt;
+    <Link
+      href={href}
+      onClick={onClick}
+      className={`text-primary typography-h5 font-bold ${className}`}
+    >
+      {label}&nbsp;&nbsp;-&gt;
     </Link>
   );
 };
