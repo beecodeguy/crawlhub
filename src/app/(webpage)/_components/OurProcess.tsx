@@ -33,7 +33,7 @@ const OurProcess = () => {
           <span className="typography-h2">Our Process: How It Works</span>
           <JumpButton
             label="Get Started"
-            className="bg-primary text-white px-5 py-3 rounded-lg w-fit mt-[35px]"
+            className="bg-primary text-white px-4 py-2 rounded-lg w-fit mt-[35px]"
           />
         </div>
         <div className="flex flex-col gap-5">

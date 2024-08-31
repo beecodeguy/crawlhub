@@ -9,7 +9,7 @@ const NavItems = () => {
   const pathname = usePathname();
   
   return (
-    <div className="flex items-center gap-5">
+    <div className="flex items-center gap-4">
       {WebPageRoutes.map((route) => (
         <Link
           key={route.title}

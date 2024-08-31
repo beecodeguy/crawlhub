@@ -28,7 +28,7 @@ const OurServiceContent: React.FC<IProps> = ({ icon, title, description }) => (
 
 const OurServices = () => {
   return (
-    <div className="container mx-auto mb-[128px] flex flex-col gap-[40px] items-center justify-center">
+    <div className="container mx-auto mb-[128px] flex flex-col gap-5 items-center justify-center">
       <span className="typography-h2">What Would You Like to Do?</span>
       <div className="grid grid-cols-2 gap-6">
         <OurServiceContent

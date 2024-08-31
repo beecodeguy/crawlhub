@@ -22,7 +22,7 @@ const WhyWouldYouContent: React.FC<IProps> = ({
   description,
 }) => (
   <Card className="h-[224px] w-[302px]">
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
       <IconWrapper icon={icon} />
       <p className="typography-h5">{description}</p>
       <JumpButton label={buttonLabel} />
@@ -32,10 +32,10 @@ const WhyWouldYouContent: React.FC<IProps> = ({
 
 const WhatWouldYou = () => {
   return (
-    <div className="pb-[56px]">
-      <div className="flex flex-col gap-[40px] items-center bg-light-grey py-5">
+    <div className="pb-7">
+      <div className="flex flex-col gap-5 items-center bg-light-grey py-4">
         <span className="typography-h2">What Would You Like to Do?</span>
-        <div className="flex gap-3">
+        <div className="flex gap-2">
           <WhyWouldYouContent
             icon={Customized}
             buttonLabel="Request a quote"
