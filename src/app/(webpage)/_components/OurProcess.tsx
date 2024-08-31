@@ -28,7 +28,7 @@ const ProcessInfo: React.FC<IProps> = ({ title, icon, description }) => (
 const OurProcess = () => {
   return (
     <div className="mb-[128px]">
-      <div className="page-container flex gap-[128px] items-center">
+      <div className="container mx-auto flex gap-[128px] items-center">
         <div className="flex flex-col">
           <span className="typography-h2">Our Process: How It Works</span>
           <JumpButton

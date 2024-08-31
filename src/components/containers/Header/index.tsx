@@ -10,7 +10,7 @@ interface IProps {
 const Header: React.FC<IProps> = ({ className }) => {
   return (
     <header className={className}>
-      <nav className="page-container flex py-4 justify-between items-center">
+      <nav className="container mx-auto flex py-4 justify-between items-center">
         <span className="typography-h4 text-primary">CrawlerHub</span>
         <NavItems />
         <div className="flex gap-5 items-center">

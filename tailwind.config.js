@@ -22,10 +22,6 @@ module.exports = {
     fontFamily: {
       sans: ["var(--font-verdana-pro)"],
     },
-    container: {
-      center: true,
-      padding: "2rem",
-    },
     extend: {
       screens: {
         xs: "480px",
