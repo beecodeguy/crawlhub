@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const OurServiceContent: React.FC<IProps> = ({ icon, title, description }) => (
-  <div className="bg-light-grey">
+  <div className="bg-light-grey w-[616px]">
     <div className="grid place-items-center px-[108px] py-4">
       <Image src={icon} alt="" height={235} width={400} />
     </div>
@@ -29,7 +29,7 @@ const OurServiceContent: React.FC<IProps> = ({ icon, title, description }) => (
 const OurServices = () => {
   return (
     <div className="container mx-auto mb-[128px] flex flex-col gap-5 items-center justify-center">
-      <span className="typography-h2">What Would You Like to Do?</span>
+      <span className="typography-h2">Our Services</span>
       <div className="grid grid-cols-2 gap-6">
         <OurServiceContent
           title="Custom Data Extraction"
