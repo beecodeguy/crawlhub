@@ -1,16 +1,22 @@
-import { LayoutDashboard, UsersRound } from "lucide-react";
-
-const Routes = [
+export const WebPageRoutes = [
   {
-    title: "Dashboard",
-    href: "/admin/dashboard",
-    icon: LayoutDashboard,
+    title: "Home",
+    href: "/",
   },
   {
-    title: "Users",
-    href: "/admin/users",
-    icon: UsersRound,
+    title: "About Us",
+    href: "/about-us",
+  },
+  {
+    title: "Services",
+    href: "/services",
+  },
+  {
+    title: "Pricing",
+    href: "/pricing",
+  },
+  {
+    title: "Blog",
+    href: "/blog",
   },
 ];
-
-export default Routes;

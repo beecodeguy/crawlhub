@@ -1,16 +1,24 @@
 "use client";
 
+import { WebPageRoutes } from "@/constants/routes";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const NavItems = () => {
+  const pathname = usePathname();
+  
   return (
     <div className="flex items-center gap-5">
-      <Link href="">Home</Link>
-      <Link href="">About Us</Link>
-      <Link href="">Services</Link>
-      <Link href="">Pricing</Link>
-      <Link href="">Blog</Link>
+      {WebPageRoutes.map((route) => (
+        <Link
+          key={route.title}
+          href={route.href}
+          className={route.href === pathname ? "text-primary" : ""}
+        >
+          {route.title}
+        </Link>
+      ))}
     </div>
   );
 };
