@@ -7,7 +7,7 @@ const ManageCrawlers = () => {
   return (
     <div className="container mx-auto flex items-center mb-[128px]">
       <div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           <div className="typography-h1">
             We build and manage <span className="text-primary">Crawlers</span>{" "}
             for you.

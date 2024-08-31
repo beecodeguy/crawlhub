@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const ProcessInfo: React.FC<IProps> = ({ title, icon, description }) => (
-  <div className="flex gap-2 px-3">
+  <div className="flex gap-[12px] px-2">
     <IconWrapper icon={icon} />
     <div>
       <span className="typography-h4">{title}</span>
@@ -36,7 +36,7 @@ const OurProcess = () => {
             className="bg-primary text-white px-5 py-3 rounded-lg w-fit mt-[35px]"
           />
         </div>
-        <div className="flex flex-col gap-[40px]">
+        <div className="flex flex-col gap-5">
           <ProcessInfo
             icon={InfoIcon}
             title="Project Information"
