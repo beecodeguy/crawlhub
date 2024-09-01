@@ -1,12 +1,10 @@
-import Header from "@/components/containers/Header";
 import React from "react";
 
 const Pricing = () => {
   return (
-    <div>
-      <Header />
+    <section>
       Pricing
-    </div>
+    </section>
   );
 };
 

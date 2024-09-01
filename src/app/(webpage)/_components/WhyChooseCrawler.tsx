@@ -22,7 +22,7 @@ const CrawlerContent: React.FC<IProps> = ({ icon, title, description }) => (
 
 const WhyChooseCrawler = () => {
   return (
-    <div className="flex mb-[128px] flex-col gap-[40px] items-center bg-light-grey py-5">
+    <div className="bg-gradient-custom flex mb-[128px] flex-col gap-[40px] items-center bg-light-grey py-5">
       <span className="typography-h2">Why Choose CrawlerHub?</span>
       <div className="flex gap-3">
         <CrawlerContent

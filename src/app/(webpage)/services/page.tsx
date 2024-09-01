@@ -1,12 +1,10 @@
-import Header from "@/components/containers/Header";
 import React from "react";
 
 const Services = () => {
   return (
-    <div>
-      <Header />
+    <section>
       Services
-    </div>
+    </section>
   );
 };
 

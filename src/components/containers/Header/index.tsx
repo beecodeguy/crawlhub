@@ -3,13 +3,9 @@ import Link from "next/link";
 import React from "react";
 import NavItems from "./NavItems";
 
-interface IProps {
-  className?: string;
-}
-
-const Header: React.FC<IProps> = ({ className }) => {
+const Header = () => {
   return (
-    <header className={className}>
+    <header>
       <nav className="container mx-auto flex py-3 justify-between items-center">
         <span className="typography-h4 text-primary">CrawlerHub</span>
         <NavItems />

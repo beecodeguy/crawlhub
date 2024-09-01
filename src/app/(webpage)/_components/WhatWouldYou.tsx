@@ -5,8 +5,6 @@ import {
   TechComputer,
 } from "@/assets/icons";
 import Card, { CardContent } from "@/components/Card";
-import IconWrapper from "@/components/IconWrapper";
-import JumpButton from "@/components/JumpButton";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import React from "react";
 

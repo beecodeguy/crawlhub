@@ -8,8 +8,10 @@ const WebPageLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <main>
+    <main className="web-page-layout">
+      <Header />
       {children}
+      <Footer />
     </main>
   );
 };
