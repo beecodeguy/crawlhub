@@ -8,7 +8,7 @@ const AboutUs = () => {
     <>
       <AboutUsBanner />
       <OurStory />
-      <ContactUsBanner className="mb-[128px]" />
+      <ContactUsBanner />
     </>
   );
 };

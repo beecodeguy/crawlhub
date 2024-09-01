@@ -5,7 +5,7 @@ import React from "react";
 
 const AboutUsBanner = () => {
   return (
-    <div className="container mx-auto bg-gradient-custom flex items-center">
+    <div className="container mx-auto bg-gradient-custom flex items-center mb-[24px]">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <span className="typography-h2">About Us</span>

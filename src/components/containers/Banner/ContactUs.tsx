@@ -1,15 +1,9 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 
-interface IProps {
-  className?: string;
-}
-
-const ContactUsBanner: React.FC<IProps> = ({ className }) => {
+const ContactUsBanner = () => {
   return (
-    <div
-      className={`container mx-auto flex justify-between items-center bg-primary px-[40px] py-6 rounded-lg ${className}`}
-    >
+    <div className="container mx-auto mb-[128px] flex justify-between items-center bg-primary px-[40px] py-6 rounded-lg">
       <span className="text-white">
         Get in touch for tailored data solutions—your <br />
         project starts with a click!
