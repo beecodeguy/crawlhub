@@ -4,8 +4,7 @@ import {
   TransparentPricing,
   UserCentric,
 } from "@/assets/icons";
-import Card from "@/components/Card";
-import IconWrapper from "@/components/IconWrapper";
+import Card, { CardContent } from "@/components/Card";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import React from "react";
 
@@ -17,11 +16,7 @@ interface IProps {
 
 const CrawlerContent: React.FC<IProps> = ({ icon, title, description }) => (
   <Card>
-    <IconWrapper icon={icon} />
-    <div className="mt-[18px] flex flex-col gap-3">
-      <span className="leading-[30px] text-[20px] font-semibold">{title}</span>
-      <p className="typography-h5">{description}</p>
-    </div>
+    <CardContent icon={icon} title={title} description={description} />
   </Card>
 );
 

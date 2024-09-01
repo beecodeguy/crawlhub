@@ -4,7 +4,7 @@ import {
   SupportAgent,
   TechComputer,
 } from "@/assets/icons";
-import Card from "@/components/Card";
+import Card, { CardContent } from "@/components/Card";
 import IconWrapper from "@/components/IconWrapper";
 import JumpButton from "@/components/JumpButton";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -22,11 +22,11 @@ const WhyWouldYouContent: React.FC<IProps> = ({
   description,
 }) => (
   <Card className="h-[224px] w-[302px]">
-    <div className="flex flex-col gap-3">
-      <IconWrapper icon={icon} />
-      <p className="typography-h5">{description}</p>
-      <JumpButton label={buttonLabel} />
-    </div>
+    <CardContent
+      icon={icon}
+      description={description}
+      button={{ label: buttonLabel }}
+    />
   </Card>
 );
 

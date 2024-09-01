@@ -1,5 +1,31 @@
 "use client";
 import React from "react";
+import IconWrapper from "../IconWrapper";
+import JumpButton, { IJumpButton } from "../JumpButton";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
+interface ICardContent {
+  icon: string | StaticImport;
+  description: string;
+  button?: IJumpButton;
+  title?: string;
+}
+
+export const CardContent: React.FC<ICardContent> = ({
+  icon,
+  description,
+  button,
+  title,
+}) => (
+  <div className="flex flex-col gap-3">
+    <IconWrapper icon={icon} />
+    {title && (
+      <span className="leading-[30px] text-[20px] font-semibold">{title}</span>
+    )}
+    <p className="typography-h5">{description}</p>
+    {button && <JumpButton {...button} />}
+  </div>
+);
 
 interface IProps {
   children: React.ReactNode;
