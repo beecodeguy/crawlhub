@@ -14,9 +14,7 @@ export default function Home() {
       <ManageCrawlers />
       <WhyChooseCrawler />
       <OurServices />
-      <div className="container mx-auto mb-[128px]">
-        <ContactUsBanner />
-      </div>
+      <ContactUsBanner className="container mx-auto mb-[128px]" />
       <OurProcess />
       <WhatWouldYou />
       <Footer />
