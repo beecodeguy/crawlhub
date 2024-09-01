@@ -7,13 +7,13 @@ import WhatWouldYou from "./_components/WhatWouldYou";
 
 export default function Home() {
   return (
-    <section>
+    <>
       <ManageCrawlers />
       <WhyChooseCrawler />
       <OurServices />
       <ContactUsBanner className="mb-[128px]" />
       <OurProcess />
       <WhatWouldYou />
-    </section>
+    </>
   );
 }

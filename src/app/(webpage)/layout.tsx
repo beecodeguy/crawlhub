@@ -10,7 +10,7 @@ const WebPageLayout = ({
   return (
     <main className="web-page-layout">
       <Header />
-      {children}
+      <section>{children}</section>
       <Footer />
     </main>
   );

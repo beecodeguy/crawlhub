@@ -5,11 +5,11 @@ import ContactUsBanner from "@/components/containers/Banner/ContactUs";
 
 const AboutUs = () => {
   return (
-    <section>
+    <>
       <AboutUsBanner />
       <OurStory />
       <ContactUsBanner className="mb-[128px]" />
-    </section>
+    </>
   );
 };
 
