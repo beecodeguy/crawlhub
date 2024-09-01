@@ -8,7 +8,7 @@ interface IProps {
 const ContactUsBanner: React.FC<IProps> = ({ className }) => {
   return (
     <div
-      className={`flex justify-between items-center bg-primary px-[40px] py-6 rounded-lg ${className}`}
+      className={`container mx-auto flex justify-between items-center bg-primary px-[40px] py-6 rounded-lg ${className}`}
     >
       <span className="text-white">
         Get in touch for tailored data solutions—your <br />
