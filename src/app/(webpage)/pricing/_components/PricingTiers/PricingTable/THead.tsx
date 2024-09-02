@@ -35,7 +35,9 @@ const HeaderInfo: React.FC<IProps> = ({
 const THead = () => {
   return (
     <tr>
-      <th>Compare Features accross plans</th>
+      <th className="typography-h4">
+        Compare Features accross plans
+      </th>
       <th className="border-x border-t border-[#000000]">
         <HeaderInfo title="Basic Package" price="$199" previousPrice="$299" />
       </th>
