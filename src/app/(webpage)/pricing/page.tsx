@@ -1,10 +1,17 @@
 import React from "react";
+import PricingTiers from "./_components/PricingTiers";
+import ContactUsBanner from "@/components/containers/Banner/ContactUs";
+import FAQs from "./_components/FAQs";
+import PricingPackages from "./_components/PricingPackages";
 
 const Pricing = () => {
   return (
-    <section>
-      Pricing
-    </section>
+    <>
+      <PricingTiers />
+      <ContactUsBanner />
+      <FAQs />
+      <PricingPackages />
+    </>
   );
 };
 
