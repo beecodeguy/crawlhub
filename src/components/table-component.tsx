@@ -45,7 +45,7 @@ export function DataTable<TData, TValue>({ columns, data, searchKey }: DataTable
           className="max-w-sm"
         />
       </div>
-      <div className="rounded-md border">
+      <div className="react-table rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map(headerGroup => (
