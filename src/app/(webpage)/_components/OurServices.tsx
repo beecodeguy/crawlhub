@@ -4,6 +4,7 @@ import {
   FlexibleDataDelivery,
   RealTimeDataExtraction,
 } from "@/assets/images";
+import JumpButton from "@/components/JumpButton";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
@@ -15,14 +16,13 @@ interface IProps {
 }
 
 const OurServiceContent: React.FC<IProps> = ({ icon, title, description }) => (
-  <div className="bg-light-grey w-[616px]">
-    <div className="grid place-items-center px-[108px] py-4">
-      <Image src={icon} alt="" height={235} width={400} />
-    </div>
-    <div className="p-3 bg-white mb-4">
+  <div className="hover:bg-light-grey w-[598px] p-4 flex flex-col items-center gap-6">
+    <div className="flex flex-col gap-4">
       <span className="typography-h4">{title}</span>
       <p className="leading-[30px] text-[20px]">{description}</p>
+      <JumpButton label="Learn More" />
     </div>
+    <Image src={icon} alt="" height={235} width={400} />
   </div>
 );
 

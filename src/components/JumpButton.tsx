@@ -1,6 +1,6 @@
 "use client";
 
-import { RightArrowIcon } from "@/assets/icons";
+import { RightArrowIcon, RightArrowWhiteIcon } from "@/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -10,6 +10,7 @@ export interface IJumpButton {
   onClick?: React.MouseEventHandler<HTMLAnchorElement> | undefined;
   label: string;
   className?: string;
+  whiteIcon?: boolean;
 }
 
 const JumpButton: React.FC<IJumpButton> = ({
@@ -17,6 +18,7 @@ const JumpButton: React.FC<IJumpButton> = ({
   onClick,
   label,
   className,
+  whiteIcon = false,
 }) => {
   return (
     <Link
@@ -25,7 +27,12 @@ const JumpButton: React.FC<IJumpButton> = ({
       className={`text-primary typography-h5 font-bold flex gap-1 items-center ${className}`}
     >
       {label}
-      <Image src={RightArrowIcon} height={16} width={16} alt="Right Arrow" />
+      <Image
+        src={whiteIcon ? RightArrowWhiteIcon : RightArrowIcon}
+        height={16}
+        width={16}
+        alt="Right Arrow"
+      />
     </Link>
   );
 };
