@@ -1,0 +1,17 @@
+import React from "react";
+
+const LoginBanner = () => {
+  return (
+    <div className="p-3 w-[420px] bg-primary text-white flex flex-col gap-2 justify-center">
+      <span className="typography-h4">
+        Managed web data extraction.At scale.
+      </span>
+      <p className="typography-h5">
+        The one-stop platform for all your data sourcing needs. No complicated
+        software to use, no tools to configure!
+      </p>
+    </div>
+  );
+};
+
+export default LoginBanner;

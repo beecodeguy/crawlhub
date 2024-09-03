@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import ReCAPTCHA from "react-google-recaptcha";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const loginFormSchema = z.object({
   email: z.string().min(4),
@@ -17,7 +19,7 @@ const loginFormSchema = z.object({
 type TLoginForm = z.infer<typeof loginFormSchema>;
 
 const LoginForm = () => {
-  const { register, handleSubmit, control } = useForm<TLoginForm>({
+  const { register, handleSubmit } = useForm<TLoginForm>({
     resolver: zodResolver(loginFormSchema),
   });
 
@@ -51,50 +53,53 @@ const LoginForm = () => {
   // };
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <Label>Email address</Label>
-        <div className="mt-2">
-          <Input {...register("email")} id="email" name="email" type="email" />
-        </div>
-      </div>
-
-      <div>
-        <div className="flex items-center justify-between">
-          <Label>Password</Label>
-          <div className="text-sm">
-            <a
-              href="#"
-              className="font-semibold text-indigo-600 hover:text-indigo-500"
-            >
-              Forgot password?
-            </a>
+    <div className="space-y-4">
+      <span className="typography-h4">Login In</span>
+      <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <Label>Email address</Label>
+          <div className="mt-2">
+            <Input
+              {...register("email")}
+              id="email"
+              name="email"
+              type="email"
+            />
           </div>
         </div>
-        <div className="mt-2">
-          <Input
-            {...register("password")}
-            id="password"
-            name="password"
-            type="password"
-          />
+
+        <div>
+          <div className="flex items-center justify-between">
+            <Label>Password</Label>
+          </div>
+          <div className="mt-2">
+            <Input
+              {...register("password")}
+              id="password"
+              name="password"
+              type="password"
+            />
+          </div>
+          <div className="text-sm mt-2">
+            <Link
+              href="/forgot-password"
+              className="leading-[20px] text-[14px] float-right text-primary"
+            >
+              Forgot password?
+            </Link>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <button
-          type="submit"
-          className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          Sign in
-        </button>
-      </div>
+        <Button className="w-full mt-2" type="submit">
+          Log In
+        </Button>
 
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey="6LclYy0qAAAAAN-RJ6ajLzWa5y7y-sqj17GOqACN"
-      />
-    </form>
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey="6LclYy0qAAAAAN-RJ6ajLzWa5y7y-sqj17GOqACN"
+        />
+      </form>
+    </div>
   );
 };
 
