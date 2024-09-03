@@ -9,7 +9,7 @@ const verdana = localFont({
 
 export const metadata: Metadata = {
   title: "Crawler Hub",
-  description: "Web crawling application",
+  description: "Web crawling service",
 };
 
 export default function RootLayout({
