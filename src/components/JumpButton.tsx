@@ -24,7 +24,9 @@ const JumpButton: React.FC<IJumpButton> = ({
     <Link
       href={href}
       onClick={onClick}
-      className={`text-primary typography-h5 font-bold flex gap-1 items-center ${className}`}
+      className={`text-primary typography-h5 font-bold flex gap-1 items-center ${
+        className ? className : ""
+      }`}
     >
       {label}
       <Image
