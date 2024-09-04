@@ -6,3 +6,5 @@ export { default as CustomWebCrawlers } from "./custom_web_crawlers.png";
 export { default as AboutUs } from "./aboutus.svg";
 export { default as OurExpertise } from "./out_expertise.svg";
 export { default as JoinUsJourney } from "./join_us_journey.svg";
+export { default as SampleImage } from "./sample_image.png";
+export { default as DefaultAvatar } from "./default_avtar.png";

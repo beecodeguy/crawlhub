@@ -22,7 +22,7 @@ const MoreOptions: React.FC<IProps> = ({ items }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-1 w-9 p-0">
+        <Button variant="ghost" className="w-9 p-0">
           <span>More</span>
           <MoreHorizontal className="h-2 w-2" />
         </Button>
@@ -32,7 +32,6 @@ const MoreOptions: React.FC<IProps> = ({ items }) => {
           <DropdownMenuItem
             onClick={() => (item.onClick ? item.onClick(item.value) : null)}
             key={item.value}
-            className="hover:bg-[#D9D8D8] hover:rounded-none"
           >
             {item.label}
           </DropdownMenuItem>
