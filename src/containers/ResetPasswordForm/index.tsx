@@ -37,7 +37,7 @@ const ResetPasswordForm = () => {
               id="password"
               name="password"
               type="password"
-              placeholder="New Password"
+              placeholder="Enter password"
             />
           </div>
         </div>
@@ -52,7 +52,7 @@ const ResetPasswordForm = () => {
               id="password"
               name="password"
               type="password"
-              placeholder="Confirm Password"
+              placeholder="Re-enter password"
             />
           </div>
         </div>
