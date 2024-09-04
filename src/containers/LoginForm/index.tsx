@@ -48,22 +48,19 @@ const LoginForm = () => {
       });
   };
 
-  // const onChangeRecaptcha = (token: string | null) => {
-  //   console.log(token);
-  // };
-
   return (
     <div className="space-y-4">
       <span className="typography-h4">Login In</span>
       <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <Label>Email address</Label>
+          <Label>Business Email</Label>
           <div className="mt-2">
             <Input
               {...register("email")}
               id="email"
               name="email"
               type="email"
+              placeholder="Your business email"
             />
           </div>
         </div>
@@ -78,6 +75,7 @@ const LoginForm = () => {
               id="password"
               name="password"
               type="password"
+              placeholder="Enter password"
             />
           </div>
           <div className="text-sm mt-2">
