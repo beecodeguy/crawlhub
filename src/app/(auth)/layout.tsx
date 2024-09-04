@@ -1,9 +1,15 @@
 import AuthBanner from "@/components/containers/Banner/auth-banner";
+import { Metadata } from "next";
 import React from "react";
 
 interface IProps {
   children: React.ReactNode;
 }
+
+export const metadata: Metadata = {
+  title: "CrawlerHub",
+  description: "Web data extraction service",
+};
 
 const AuthLayout: React.FC<IProps> = ({ children }) => {
   return (
