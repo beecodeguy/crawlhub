@@ -11,7 +11,7 @@ const AuthLayout: React.FC<IProps> = ({ children }) => {
       <span className="typography-h3 text-primary">CrawlerHub</span>
       <div className="p-3 bg-white flex gap-4 rounded-2xl">
         <AuthBanner />
-        {children}
+        <div className="space-y-4 w-[424px]">{children}</div>
       </div>
     </div>
   );

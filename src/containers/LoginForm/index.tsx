@@ -50,7 +50,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <>
       <span className="typography-h4">Login In</span>
       <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
         <div>
@@ -98,7 +98,7 @@ const LoginForm = () => {
           sitekey="6LclYy0qAAAAAN-RJ6ajLzWa5y7y-sqj17GOqACN"
         />
       </form>
-    </div>
+    </>
   );
 };
 

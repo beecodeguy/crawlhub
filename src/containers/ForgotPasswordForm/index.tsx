@@ -26,7 +26,7 @@ const ForgotPasswordForm = () => {
   const onSubmit = () => {};
 
   return (
-    <div className="space-y-4 max-w-[424px]">
+    <>
       <div className="flex flex-col gap-1">
         <span className="typography-h4">Forgot Password?</span>
         <span>
@@ -57,7 +57,7 @@ const ForgotPasswordForm = () => {
           Sign In
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

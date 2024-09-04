@@ -26,7 +26,7 @@ const ResetPasswordForm = () => {
   const onSubmit = () => {};
 
   return (
-    <div className="space-y-4">
+    <>
       <span className="typography-h4">Reset Your Password</span>
       <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
         <div>
@@ -61,7 +61,7 @@ const ResetPasswordForm = () => {
           Reset Password
         </Button>
       </form>
-    </div>
+    </>
   );
 };
 
