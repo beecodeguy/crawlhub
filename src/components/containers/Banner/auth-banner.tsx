@@ -1,8 +1,8 @@
 import React from "react";
 
-const LoginBanner = () => {
+const AuthBanner = () => {
   return (
-    <div className="p-3 w-[420px] bg-primary text-white flex flex-col gap-2 justify-center">
+    <div className="p-3 max-w-[420px] bg-primary text-white flex flex-col gap-2 justify-center">
       <span className="typography-h4">
         Managed web data extraction.At scale.
       </span>
@@ -14,4 +14,4 @@ const LoginBanner = () => {
   );
 };
 
-export default LoginBanner;
+export default AuthBanner;
