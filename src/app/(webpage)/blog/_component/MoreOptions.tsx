@@ -28,10 +28,11 @@ const MoreOptions: React.FC<IProps> = ({ items }) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-white" align="end">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <DropdownMenuItem
             onClick={() => (item.onClick ? item.onClick(item.value) : null)}
             key={item.value}
+            className={items.length - 1 !== index ? "border-b-[1px]" : ""}
           >
             {item.label}
           </DropdownMenuItem>

@@ -1,6 +1,6 @@
 import React from "react";
 import MoreOptions from "./MoreOptions";
-import { Input } from "@/components/ui/input";
+import SearchInput from "@/components/SearchInput";
 
 const items = [
   "All",
@@ -28,7 +28,7 @@ const BlogCategories = () => {
           ]}
         />
       </div>
-      <Input />
+      <SearchInput />
     </div>
   );
 };
