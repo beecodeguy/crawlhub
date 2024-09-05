@@ -19,7 +19,7 @@ interface IProps {
 export default function ({ total }: IProps) {
   const paginate = usePagination(2);
   const { nextPage, prevPage, currentPage } = paginate;
-  
+
   return (
     <Pagination>
       <PaginationContent>
@@ -27,8 +27,12 @@ export default function ({ total }: IProps) {
           <PaginationPrevious onClick={() => prevPage()} />
         </PaginationItem>
         {Array.from({ length: 4 }, (v, i) => (
-          <PaginationItem>
-            <PaginationLink isActive={currentPage === i + 1} href="/blog">
+          <PaginationItem key={i}>
+            <PaginationLink
+              
+              isActive={currentPage === i + 1}
+              href="/blog"
+            >
               {i + 1}
             </PaginationLink>
           </PaginationItem>
