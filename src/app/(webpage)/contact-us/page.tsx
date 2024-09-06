@@ -6,7 +6,7 @@ import ContactUsDescription from "./_components/contact-us-description";
 const ContactUs = () => {
   return (
     <div className="container mx-auto flex flex-col gap-[128px]">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-[50px]">
         <ContactUsDescription />
         <ContactUsForm />
       </div>
