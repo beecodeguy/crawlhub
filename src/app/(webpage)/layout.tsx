@@ -8,7 +8,7 @@ const WebPageLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <main className="web-page-layout">
+    <main className="web-page-layout bg-white">
       <Header />
       <section>{children}</section>
       <Footer />
