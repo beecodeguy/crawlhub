@@ -7,42 +7,46 @@ const ContactUsForm = () => {
     <div className="p-3 bg-white flex flex-col gap-3 w-full justify-center">
       <span className="typography-h4">Unlock the Power of Your Data?</span>
       <div className="flex gap-2">
-        <div>
+        <div className="w-full">
           <Label>Full Name</Label>
           <Input />
         </div>
-        <div>
+        <div className="w-full">
           <Label>Business Email</Label>
           <Input />
         </div>
       </div>
       <div className="flex gap-2">
-        <div>
+        <div className="w-full">
           <Label>Company</Label>
           <Input />
         </div>
-        <div>
+        <div className="w-full">
           <Label>Position</Label>
           <Input />
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <Label>Source of Data</Label>
-        <Input />
+        <div>
+          <Input />
+        </div>
       </div>
       <div className="flex gap-2">
-        <div>
+        <div className="w-full">
           <Label>Volume of Data</Label>
           <Input />
         </div>
-        <div>
+        <div className="w-full">
           <Label>Frequency of Data Extraction</Label>
           <Input />
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <Label>About your project</Label>
-        <Input />
+        <div>
+          <Input />
+        </div>
       </div>
     </div>
   );
