@@ -1,6 +1,6 @@
 import React from "react";
 import PricingTiers from "./_components/PricingTiers";
-import ContactUsBanner from "@/components/containers/Banner/ContactUs";
+import ContactUsBanner from "@/components/containers/Banner/contact-us-banner";
 import FAQs from "./_components/FAQs";
 import PricingPackages from "./_components/PricingPackages";
 

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const ContactUsBanner = () => {
@@ -8,7 +9,11 @@ const ContactUsBanner = () => {
         Get in touch for tailored data solutions—your <br />
         project starts with a click!
       </span>
-      <Button className="bg-white text-primary">Contact Us</Button>
+      <Link href="/contact-us">
+        <Button className="bg-white text-primary hover:text-white">
+          Contact Us
+        </Button>
+      </Link>
     </div>
   );
 };
