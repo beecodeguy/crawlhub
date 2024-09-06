@@ -3,7 +3,13 @@ import localFont from "next/font/local";
 import "@/assets/styles/main.scss";
 
 const verdana = localFont({
-  src: "../assets/fonts/VerdanaPro-Regular.ttf",
+  src: [
+    {
+      path: "../assets/fonts/VerdanaPro-Regular.ttf",
+      style: "normal",
+      weight: "400",
+    },
+  ],
   variable: "--font-verdana-pro",
 });
 
