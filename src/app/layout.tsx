@@ -9,6 +9,16 @@ const verdana = localFont({
       style: "normal",
       weight: "400",
     },
+    {
+      path: "../assets/fonts/VerdanaPro-Bold.ttf",
+      style: "normal",
+      weight: "bold",
+    },
+    {
+      path: "../assets/fonts/VerdanaPro-SemiBold.ttf",
+      style: "normal",
+      weight: "600",
+    },
   ],
   variable: "--font-verdana-pro",
 });
