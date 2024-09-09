@@ -3,6 +3,7 @@ import React from "react";
 import IconWrapper from "../IconWrapper";
 import JumpButton, { IJumpButton } from "../JumpButton";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { cn } from "@/lib/utils";
 
 interface ICardContent {
   icon: string | StaticImport;
@@ -19,9 +20,7 @@ export const CardContent: React.FC<ICardContent> = ({
 }) => (
   <div className="flex flex-col gap-3">
     <IconWrapper icon={icon} />
-    {title && (
-      <span className="typography-b1 font-semibold">{title}</span>
-    )}
+    {title && <span className="typography-b1 font-semibold">{title}</span>}
     <p className="typography-h5">{description}</p>
     {button && <JumpButton {...button} />}
   </div>
@@ -35,9 +34,10 @@ interface IProps {
 const Card: React.FC<IProps> = ({ children, className }) => {
   return (
     <div
-      className={`p-[20px] bg-white rounded-lg w-[308px] h-[246px] ${
-        className ? className : ""
-      }`}
+      className={cn(
+        "p-[20px] bg-white rounded-lg w-[308px] h-[246px]",
+        className
+      )}
     >
       {children}
     </div>
