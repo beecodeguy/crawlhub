@@ -28,6 +28,12 @@ const MenuItems = [
     role: ["user", "admin"],
   },
   {
+    title: "Contacts",
+    link: "/admin/contacts",
+    icon: <Icons.userPen />,
+    role: ["admin"],
+  },
+  {
     title: "Logout",
     icon: <Icons.logout />,
     role: ["user", "admin"],
@@ -51,7 +57,7 @@ const Sidebar = () => {
 
   return (
     <motion.aside
-      className={`sticky top-0 h-screen bg-gray-100 relative text-gray-800 p-4`}
+      className={`sticky top-0 h-screen bg-gray-100 text-gray-800 p-4`}
       initial={{ width: isCollapsed ? 72 : 224 }}
       animate={{ width: isCollapsed ? 72 : 224 }}
       transition={{ duration: 0.3 }}
