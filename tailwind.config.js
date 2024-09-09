@@ -1,4 +1,27 @@
 /** @type {import('tailwindcss').Config} */
+
+const colors = {
+  white: {
+    DEFAULT: "#FFFFF9",
+    foreground: "#FFFFFF",
+  },
+  primary: {
+    DEFAULT: "var(--primary)",
+    foreground: "#FAF4FF",
+  },
+  secondary: {
+    DEFAULT: "var(--secondary)",
+    foreground: "#FFEEFF",
+  },
+  grey: {
+    DEFAULT: "#D9D8D8",
+    light: "#F2F2F2",
+  },
+  black: {
+    DEFAULT: "#202020",
+  },
+};
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -36,42 +59,10 @@ module.exports = {
         custom: "0 4px 16px rgba(32, 32, 32, 0.08)",
       },
       backgroundColor: {
-        white: {
-          DEFAULT: "#FFFFF9",
-          foreground: "#FFFFFF",
-        },
+        ...colors,
       },
       colors: {
-        foreground: "hsl(var(--foreground))",
-        "light-grey": "var(--light-grey)",
-        primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        ...colors,
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -30,7 +30,7 @@ const WhyWouldYouContent: React.FC<IProps> = ({
 
 const WhatWouldYou = () => {
   return (
-    <div className="flex flex-col gap-5 items-center bg-light-grey py-4">
+    <div className="flex flex-col gap-5 items-center bg-grey-light py-4">
       <span className="typography-h2">What Would You Like to Do?</span>
       <div className="flex gap-2">
         <WhyWouldYouContent
