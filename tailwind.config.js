@@ -15,6 +15,7 @@ const colors = {
   },
   grey: {
     DEFAULT: "#D9D8D8",
+    dark: "#9F9E9E",
     light: "#F2F2F2",
   },
   black: {
