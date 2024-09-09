@@ -94,7 +94,10 @@ const ContactUsForm = () => {
               render={({ field: { value, onChange } }) => (
                 <SelectComponent
                   onChange={onChange}
-                  items={[{ label: "One", value: "one" }]}
+                  items={[
+                    { label: "Up to 5,000", value: "up_to_5000" },
+                    { label: "More than 10,000", value: "more_than_10000" },
+                  ]}
                   value={value}
                 />
               )}
@@ -109,7 +112,10 @@ const ContactUsForm = () => {
               render={({ field: { value, onChange } }) => (
                 <SelectComponent
                   onChange={onChange}
-                  items={[{ label: "One", value: "one" }]}
+                  items={[
+                    { label: "One Time", value: "one_time" },
+                    { label: "Two Time", value: "two_time" },
+                  ]}
                   value={value}
                 />
               )}
