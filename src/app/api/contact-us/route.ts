@@ -16,6 +16,12 @@ export async function POST(req: Request) {
 export async function GET() {
   try {
     const contacts = await prismadb.contact.findMany({
+      select: {
+        id: true,
+        name: true,
+        companyName: true,
+        createdAt: true,
+      },
       orderBy: {
         createdAt: "desc",
       },
