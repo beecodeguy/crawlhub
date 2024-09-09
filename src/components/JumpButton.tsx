@@ -1,6 +1,7 @@
 "use client";
 
 import { RightArrowIcon, RightArrowWhiteIcon } from "@/assets/icons";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -24,9 +25,10 @@ const JumpButton: React.FC<IJumpButton> = ({
     <Link
       href={href}
       onClick={onClick}
-      className={`text-primary hover:bg-secondary typography-h5 font-bold flex gap-1 items-center ${
-        className ? className : ""
-      }`}
+      className={cn(
+        "text-primary hover:bg-secondary typography-h5 font-bold flex gap-1 items-center",
+        className
+      )}
     >
       {label}
       <Image

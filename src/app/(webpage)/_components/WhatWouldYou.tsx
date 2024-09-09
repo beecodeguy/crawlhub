@@ -23,7 +23,7 @@ const WhyWouldYouContent: React.FC<IProps> = ({
     <CardContent
       icon={icon}
       description={description}
-      button={{ label: buttonLabel }}
+      button={{ label: buttonLabel, className: "hover:bg-transparent" }}
     />
   </Card>
 );

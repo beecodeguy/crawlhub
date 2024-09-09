@@ -16,12 +16,12 @@ interface IProps {
 }
 
 const OurServiceContent: React.FC<IProps> = ({ icon, title, description }) => (
-  <div className="bg-light-grey hover:bg-white hover:border-secondary-foreground border border-[#fff] hover:border w-[598px] p-4 flex flex-col items-center gap-6">
+  <div className="bg-grey-light hover:bg-white hover:border-secondary-foreground border border-[#fff] hover:border w-[598px] p-4 flex flex-col items-center gap-6">
     <Image src={icon} alt="" height={235} width={400} />
     <div className="flex flex-col gap-4">
       <span className="typography-h4">{title}</span>
       <p className="typography-b1">{description}</p>
-      <JumpButton label="Learn More" />
+      <JumpButton label="Learn More" className="hover:bg-transparent" />
     </div>
   </div>
 );
