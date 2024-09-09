@@ -20,6 +20,18 @@ const colors = {
   black: {
     DEFAULT: "#202020",
   },
+  danger: {
+    DEFAULT: "#D92637",
+    light: "#FBE7E9",
+  },
+  warning: {
+    DEFAULT: "#FFC107",
+    light: "#FFF2CC",
+  },
+  success: {
+    DEFAULT: "#28A745",
+    light: "#CEF3D6",
+  },
 };
 
 module.exports = {

@@ -15,7 +15,7 @@ const items = [
 const BlogCategories = () => {
   return (
     <div className="flex w-full gap-3 h-6">
-      <div className="flex items-center gap-4 border-r border-r-1 border-l-[#D9D8D8] pr-3 w-full text-nowrap">
+      <div className="flex items-center gap-4 border-r border-r-1 border-l-grey pr-3 w-full text-nowrap">
         <ul className="flex gap-4 w-full">
           {items.map((item) => (
             <li key={item}>{item}</li>

@@ -20,7 +20,7 @@ const HeaderInfo: React.FC<IProps> = ({
     <span className="typography-h4">{title}</span>
     <span>
       {previousPrice && (
-        <span className="line-through text-[#D9D8D8] leading-30 text-[20px]">
+        <span className="line-through text-grey typography-b1">
           {previousPrice}
         </span>
       )}
