@@ -12,7 +12,7 @@ const ManageCrawlers = () => {
             We build and manage <span className="text-primary">Crawlers</span>{" "}
             for you.
           </div>
-          <span className="leading-[30px] text-[20px]">
+          <span className="typography-b1">
             Are you ready to unlock the full potential of your
             <br /> business with powerful, precise, and personalized data?
           </span>

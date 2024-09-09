@@ -20,7 +20,7 @@ const ProcessInfo: React.FC<IProps> = ({ title, icon, description }) => (
     <IconWrapper icon={icon} />
     <div>
       <span className="typography-h4">{title}</span>
-      <p className="leading-[30px] text-[20px]">{description}</p>
+      <p className="typography-b1">{description}</p>
     </div>
   </div>
 );
