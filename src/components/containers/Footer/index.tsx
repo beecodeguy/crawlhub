@@ -49,7 +49,7 @@ const Footer = () => {
           />
         </div>
         <div className="h-[1px] bg-grey-light" />
-        <div className="flex justify-between text-[14px] leading-[20px]">
+        <div className="flex justify-between typography-b1">
           <div className="flex gap-2">
             <span className="underline">Terms of Service</span>
             <span className="underline">Privacy Policy</span>

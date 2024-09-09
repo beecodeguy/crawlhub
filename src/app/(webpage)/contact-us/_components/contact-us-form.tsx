@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -39,7 +40,7 @@ const ContactUsForm = () => {
         <div className="w-full">
           <Label>Source of Data</Label>
           <div>
-            <Input placeholder="Paste your web URLs or specify your data sources"/>
+            <Input placeholder="Paste your web URLs or specify your data sources" />
           </div>
         </div>
         <div className="flex gap-2">
@@ -55,9 +56,10 @@ const ContactUsForm = () => {
         <div className="w-full">
           <Label>About your project</Label>
           <div>
-            <Textarea placeholder="Write about your project"/>
+            <Textarea placeholder="Write about your project" />
           </div>
         </div>
+        <Button className="w-fit ml-auto">Contact Us</Button>
       </form>
     </div>
   );
