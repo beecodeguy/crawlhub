@@ -6,7 +6,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -15,18 +14,27 @@ interface IProps {
   onChange: (v: string) => void;
   value: string;
   items: { label: string; value: string }[];
+  name?: string;
 }
 
-const SelectComponent: React.FC<IProps> = ({ onChange, value }) => {
+const SelectComponent: React.FC<IProps> = ({
+  onChange,
+  value,
+  name,
+  items,
+}) => {
   return (
-    <Select onValueChange={onChange} value={value}>
-      <SelectTrigger className="mt-2">
+    <Select name={name} onValueChange={onChange} value={value}>
+      <SelectTrigger>
         <SelectValue placeholder="Select ..." />
       </SelectTrigger>
       <SelectContent className="bg-white w-full">
         <SelectGroup>
-          <SelectItem value="admin">Admin</SelectItem>
-          <SelectItem value="user">User</SelectItem>
+          {items.map((item) => (
+            <SelectItem key={item.value} value={item.value}>
+              {item.label}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

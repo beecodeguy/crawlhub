@@ -18,4 +18,6 @@ export { default as RightArrowWhiteIcon } from "./right_arrow_white_icon.png";
 export { default as FavouriteIcon } from "./favorite.png";
 export { default as ClockIcon } from "./clock_icon.png";
 export { default as CharmPick } from "./charm_tick.png";
+export { default as DownIcon } from "./down_icon.svg";
+
 
