@@ -20,7 +20,7 @@ export const CardContent: React.FC<ICardContent> = ({
   <div className="flex flex-col gap-3">
     <IconWrapper icon={icon} />
     {title && (
-      <span className="leading-[30px] text-[20px] font-semibold">{title}</span>
+      <span className="typography-b1 font-semibold">{title}</span>
     )}
     <p className="typography-h5">{description}</p>
     {button && <JumpButton {...button} />}
