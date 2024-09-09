@@ -5,33 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { contactUsSchema } from "@/constants/validationSchemas";
 import { ErrorMessage } from "@hookform/error-message";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 
-const contactUsSchema = z.object({
-  name: z.string().min(1, { message: "Please enter your name" }),
-  business_email: z
-    .string()
-    .min(1, "Please enter your email")
-    .email("This is not a valid email"),
-  company_name: z.string().min(1, { message: "Please enter the company name" }),
-  position: z.string().min(1, { message: "Please enter your position" }),
-  data_source: z.string().min(1, { message: "Please enter the data source" }),
-  data_volume: z.string().min(1, { message: "Please provide data volume" }),
-  data_extraction_frequency: z
-    .string()
-    .min(1, { message: "Please provide data extraction frequency" }),
-
-  about_project: z
-    .string()
-    .min(10, { message: "Minimum length is 10 characters" }),
-});
+type IContact = z.infer<typeof contactUsSchema>;
 
 const ContactUsForm = () => {
-  const method = useForm({ resolver: zodResolver(contactUsSchema) });
+  const method = useForm<IContact>({ resolver: zodResolver(contactUsSchema) });
   const {
     handleSubmit,
     register,
@@ -39,7 +23,9 @@ const ContactUsForm = () => {
     formState: { errors },
   } = method;
 
-  const onSubmit = () => {};
+  const onSubmit: SubmitHandler<IContact> = (data) => {
+    console.log({ data });
+  };
 
   return (
     <div className="p-3 bg-white-foreground flex flex-col gap-3 justify-center w-[2000px] shadow-custom">
@@ -54,20 +40,20 @@ const ContactUsForm = () => {
           <div className="w-full">
             <Label>Business Email</Label>
             <Input
-              {...register("business_email")}
+              {...register("businessEmail")}
               placeholder="Your business email"
             />
-            <ErrorMessage name="business_email" errors={errors} />
+            <ErrorMessage name="businessEmail" errors={errors} />
           </div>
         </div>
         <div className="flex gap-2">
           <div className="w-full">
             <Label>Company</Label>
             <Input
-              {...register("company_name")}
+              {...register("companyName")}
               placeholder="Your company name"
             />
-            <ErrorMessage name="company_name" errors={errors} />
+            <ErrorMessage name="companyName" errors={errors} />
           </div>
           <div className="w-full">
             <Label>Position</Label>
@@ -79,20 +65,21 @@ const ContactUsForm = () => {
           <Label>Source of Data</Label>
           <div>
             <Input
-              {...register("data_source")}
+              {...register("dataSource")}
               placeholder="Paste your web URLs or specify your data sources"
             />
           </div>
-          <ErrorMessage name="data_source" errors={errors} />
+          <ErrorMessage name="dataSource" errors={errors} />
         </div>
         <div className="flex gap-2">
           <div className="w-full">
             <Label>Volume of Data</Label>
             <Controller
-              name="data_volume"
+              name="dataVolume"
               control={control}
-              render={({ field: { value, onChange } }) => (
+              render={({ field: { name, value, onChange } }) => (
                 <SelectComponent
+                  name={name}
                   onChange={onChange}
                   items={[
                     { label: "Up to 5,000", value: "up_to_5000" },
@@ -102,15 +89,16 @@ const ContactUsForm = () => {
                 />
               )}
             />
-            <ErrorMessage name="data_volume" errors={errors} />
+            <ErrorMessage name="dataVolume" errors={errors} />
           </div>
           <div className="w-full">
             <Label>Frequency of Data Extraction</Label>
             <Controller
-              name="data_extraction_frequency"
+              name="dataExtractionFrequency"
               control={control}
-              render={({ field: { value, onChange } }) => (
+              render={({ field: { name, value, onChange } }) => (
                 <SelectComponent
+                  name={name}
                   onChange={onChange}
                   items={[
                     { label: "One Time", value: "one_time" },
@@ -120,17 +108,17 @@ const ContactUsForm = () => {
                 />
               )}
             />
-            <ErrorMessage name="data_extraction_frequency" errors={errors} />
+            <ErrorMessage name="dataExtractionFrequency" errors={errors} />
           </div>
         </div>
         <div className="w-full">
           <Label>About your project</Label>
           <div>
             <Textarea
-              {...register("about_project")}
+              {...register("aboutProject")}
               placeholder="Write about your project"
             />
-            <ErrorMessage name="about_project" errors={errors} />
+            <ErrorMessage name="aboutProject" errors={errors} />
           </div>
         </div>
         <Button type="submit" className="w-fit ml-auto">

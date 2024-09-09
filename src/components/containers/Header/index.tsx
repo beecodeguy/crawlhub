@@ -10,8 +10,10 @@ const Header = () => {
         <span className="typography-h4 text-primary">CrawlerHub</span>
         <NavItems />
         <div className="flex gap-4 items-center">
-          <Link href="">Contact</Link>
-          <Button variant="outline">Sign In</Button>
+          <Link href="/contact-us">Contact</Link>
+          <Link href="/login">
+            <Button variant="outline">Sign In</Button>
+          </Link>
         </div>
       </nav>
     </header>
