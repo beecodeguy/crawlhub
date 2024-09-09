@@ -57,9 +57,9 @@ const Sidebar = () => {
 
   return (
     <motion.aside
-      className={`sticky top-0 h-screen bg-gray-100 text-gray-800 p-4`}
-      initial={{ width: isCollapsed ? 72 : 224 }}
-      animate={{ width: isCollapsed ? 72 : 224 }}
+      className={`top-0 h-screen bg-gray-100 text-gray-800 p-4 relative`}
+      initial={{ width: isCollapsed ? 100 : 224 }}
+      animate={{ width: isCollapsed ? 100 : 224 }}
       transition={{ duration: 0.3 }}
     >
       <div className="flex items-center mb-4 space-x-1 w-3/5">
@@ -68,7 +68,7 @@ const Sidebar = () => {
           onClick={toggleCollapse}
           className="rounded-full bg-gray-400 absolute left-[calc(100%-16px)]"
         >
-          {!isCollapsed ? <ChevronRight /> : <ChevronLeft />}
+          {isCollapsed ? <ChevronRight /> : <ChevronLeft />}
         </button>
       </div>
       <nav className="space-y-2">
@@ -76,22 +76,29 @@ const Sidebar = () => {
           (item) => (
             <Link
               href={item.link ? item.link : "#"}
-              className={`w-full flex items-center space-x-2 hover:bg-gray-200 py-2 px-2 rounded-lg text-gray-800 ${
+              className={`w-full flex items-center space-x-2 hover:bg-gray-200 py-2 ${
+                isCollapsed ? "pl-[14px] pr-[36px]" : "px-2"
+              } rounded-lg text-gray-800 ${
                 item.link === pathname ? "bg-gray-200" : ""
               }`}
               key={item.title}
               onClick={item.title === "Logout" ? logOut : () => {}}
             >
-              <span>{item.icon}</span>
-              {!isCollapsed && (
+              {isCollapsed ? (
                 <motion.span
                   className="text-sm font-medium"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {item.title}
+                  {item.icon}
                 </motion.span>
+              ) : (
+                <>
+                  {" "}
+                  <span>{item.icon}</span>
+                  &nbsp;{item.title}
+                </>
               )}
             </Link>
           )
