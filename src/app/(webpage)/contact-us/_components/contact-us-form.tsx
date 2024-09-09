@@ -6,9 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { contactUsSchema } from "@/constants/validationSchemas";
+import axiosInstance from "@/lib/axiosConfig";
 import { ErrorMessage } from "@hookform/error-message";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
+import React, { useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 
@@ -21,10 +22,20 @@ const ContactUsForm = () => {
     register,
     control,
     formState: { errors },
+    reset,
   } = method;
+  const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit: SubmitHandler<IContact> = (data) => {
-    console.log({ data });
+  const onSubmit: SubmitHandler<IContact> = async (data) => {
+    setIsLoading(true);
+    try {
+      await axiosInstance.post("/api/contact-us", data);
+      reset();
+    } catch (err) {
+      //
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -121,8 +132,8 @@ const ContactUsForm = () => {
             <ErrorMessage name="aboutProject" errors={errors} />
           </div>
         </div>
-        <Button type="submit" className="w-fit ml-auto">
-          Contact Us
+        <Button disabled={isLoading} type="submit" className="w-fit ml-auto">
+          {isLoading ? "Loading..." : "Contact Us"}
         </Button>
       </form>
     </div>

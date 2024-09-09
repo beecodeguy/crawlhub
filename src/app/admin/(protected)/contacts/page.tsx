@@ -5,6 +5,7 @@ import { ContactColumns } from "./_components/ContactColumn";
 
 const Contacts = async () => {
   const contacts = await getContacts();
+  console.log({contacts})
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className="flex justify-between">
