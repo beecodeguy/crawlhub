@@ -11,6 +11,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import * as z from "zod";
 
 type IContact = z.infer<typeof contactUsSchema>;
@@ -24,6 +25,7 @@ const ContactUsForm = () => {
     formState: { errors },
     reset,
   } = method;
+
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit: SubmitHandler<IContact> = async (data) => {
@@ -31,6 +33,7 @@ const ContactUsForm = () => {
     try {
       await axiosInstance.post("/api/contact-us", data);
       reset();
+      toast.success("Message has been sent!!");
     } catch (err) {
       //
     } finally {
@@ -132,7 +135,7 @@ const ContactUsForm = () => {
             <ErrorMessage name="aboutProject" errors={errors} />
           </div>
         </div>
-        <Button disabled={isLoading} type="submit" className="w-fit ml-auto">
+        <Button type="submit" disabled={isLoading} className="w-fit ml-auto">
           {isLoading ? "Loading..." : "Contact Us"}
         </Button>
       </form>

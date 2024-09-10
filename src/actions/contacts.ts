@@ -11,3 +11,14 @@ export const getContacts = async (): Promise<Contact[] | null> => {
     return null;
   }
 };
+
+export const getContact = async (id: string): Promise<Contact | null> => {
+  try {
+    const contact = await axios.get<Contact>(
+      process.env.BASE_URL + "/api/contact-us/" + id
+    );
+    return contact.data;
+  } catch (e) {
+    return null;
+  }
+};

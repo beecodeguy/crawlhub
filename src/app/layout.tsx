@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/assets/styles/main.scss";
+import { Toaster } from "@/components/ui/sonner";
 
 const verdana = localFont({
   src: [
@@ -35,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={verdana.className}>{children}</body>
+      <body className={verdana.className}>
+        {children} <Toaster position="top-right" />
+      </body>
     </html>
   );
 }

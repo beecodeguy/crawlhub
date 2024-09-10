@@ -2,6 +2,7 @@
 
 import { Contact } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
+import CellAction from "./cell-action";
 
 export const ContactColumns: ColumnDef<Contact>[] = [
   {
@@ -35,5 +36,10 @@ export const ContactColumns: ColumnDef<Contact>[] = [
       const { createdAt } = row.original;
       return <p className="font-medium text-gray-600">{String(createdAt)}</p>;
     },
+  },
+  {
+    accessorKey: "action",
+    header: "Action",
+    cell: ({ row }) => <CellAction id={row.original.id} />,
   },
 ];
