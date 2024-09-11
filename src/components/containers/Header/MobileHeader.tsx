@@ -21,7 +21,10 @@ const MobileHeader = () => {
         <span className="typography-h4 text-primary">CrawlerHub</span>
         <div>
           {/* Hamburger icon */}
-          <button onClick={toggleMenu}>
+          <button
+            className="bg-primary-foreground p-2 rounded-full"
+            onClick={toggleMenu}
+          >
             {isOpen ? <Icons.cross /> : <Icons.hamburger />}
           </button>
         </div>
@@ -30,22 +33,22 @@ const MobileHeader = () => {
       {isOpen && (
         <div className="h-screen container mx-auto flex flex-col items-center gap-4">
           <div className="flex flex-col items-start justify-start gap-4 w-full">
-            {[
-              ...WebPageRoutes,
-              { title: "Contact", href: "/contact-us" },
-              
-            ].map((route) => (
-              <Link
-                key={route.title}
-                href={route.href}
-                className={route.href === pathname ? "text-primary" : ""}
-                onClick={() => setIsOpen(false)}
-              >
-                {route.title}
-              </Link>
-            ))}
+            {[...WebPageRoutes, { title: "Contact", href: "/contact-us" }].map(
+              (route) => (
+                <Link
+                  key={route.title}
+                  href={route.href}
+                  className={route.href === pathname ? "text-primary" : ""}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {route.title}
+                </Link>
+              )
+            )}
             <Link className="w-full" href="/login">
-              <Button className="w-full" variant="outline">Sign In</Button>
+              <Button className="w-full" variant="outline">
+                Sign In
+              </Button>
             </Link>
           </div>
         </div>
