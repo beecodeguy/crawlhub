@@ -22,3 +22,12 @@ export const getContact = async (id: string): Promise<Contact | null> => {
     return null;
   }
 };
+
+export const deleteContact = async (id: number) => {
+  try {
+    const blog = await axios.delete("/api/contact-us/" + id);
+    return blog.data;
+  } catch (err) {
+    return null;
+  }
+};

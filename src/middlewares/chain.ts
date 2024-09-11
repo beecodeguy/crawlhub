@@ -9,6 +9,7 @@ export type CustomMiddleware = (
 ) => NextMiddlewareResult | Promise<NextMiddlewareResult>;
 
 type MiddlewareFactory = (middleware: CustomMiddleware) => CustomMiddleware;
+
 export function chain(
   functions: MiddlewareFactory[],
   index = 0
