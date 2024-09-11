@@ -28,7 +28,7 @@ const MobileHeader = () => {
       </nav>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden h-screen container mx-auto flex flex-col items-center gap-4">
+        <div className="h-screen container mx-auto flex flex-col items-center gap-4">
           <div className="flex flex-col items-start justify-start gap-4 w-full">
             {[
               ...WebPageRoutes,
