@@ -30,7 +30,7 @@ const OurServices = () => {
   return (
     <div className="container mx-auto mb-[128px] flex flex-col gap-5 items-center justify-center">
       <span className="typography-h2">Our Services</span>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-6">
         <OurServiceContent
           title="Custom Data Extraction"
           description="Tailor-made web crawlers built to capture exactly the data you need."

@@ -24,7 +24,7 @@ const WhyChooseCrawler = () => {
   return (
     <div className="pt-[128px] bg-gradient-custom flex mb-[128px] flex-col gap-[40px] items-center bg-grey-light py-5">
       <span className="typography-h2">Why Choose CrawlerHub?</span>
-      <div className="flex gap-3">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xs:grid-cols-1">
         <CrawlerContent
           icon={TailoredPrecision}
           title="Tailored Precision"

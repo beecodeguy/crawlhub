@@ -5,7 +5,7 @@ import React from "react";
 
 const ManageCrawlers = () => {
   return (
-    <div className="bg-gradient-custom container mx-auto flex items-center justify-between">
+    <div className="bg-gradient-custom container mx-auto flex xs:flex-col lg:flex-row items-center justify-between">
       <div>
         <div className="flex flex-col gap-3">
           <div className="typography-h1">

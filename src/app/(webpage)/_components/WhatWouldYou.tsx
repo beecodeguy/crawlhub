@@ -32,7 +32,7 @@ const WhatWouldYou = () => {
   return (
     <div className="flex flex-col gap-5 items-center bg-grey-light py-4">
       <span className="typography-h2">What Would You Like to Do?</span>
-      <div className="flex gap-2">
+      <div className="grid lg:grid-cols-4 md:grid-col-2 sm:grid-col-1 gap-2">
         <WhyWouldYouContent
           icon={Customized}
           buttonLabel="Request a quote"
