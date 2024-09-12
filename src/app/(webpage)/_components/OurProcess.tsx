@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const ProcessInfo: React.FC<IProps> = ({ title, icon, description }) => (
-  <div className="flex gap-[12px] lg:flex-row md:flex-col px-2">
+  <div className="flex gap-[12px] lg:flex-row xs:flex-col px-2">
     <IconWrapper icon={icon} />
     <div>
       <span className="typography-h4">{title}</span>

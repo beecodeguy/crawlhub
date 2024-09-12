@@ -42,11 +42,11 @@ const ContactUsForm = () => {
   };
 
   return (
-    <div className="p-3 bg-white-foreground flex flex-col gap-3 justify-center w-[2000px] shadow-custom">
+    <div className="p-3 bg-white-foreground flex flex-col gap-3 justify-center lg:w-[2000px] sm:w-full shadow-custom">
       <span className="typography-h4">Unlock the Power of Your Data?</span>
       <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex gap-2">
-          <div className="w-full">
+        <div className="flex gap-2 lg:flex-row sm:flex-col">
+          <div>
             <Label>Full Name</Label>
             <Input {...register("name")} placeholder="Your full name" />
             <ErrorMessage name="name" errors={errors} />
@@ -60,7 +60,7 @@ const ContactUsForm = () => {
             <ErrorMessage name="businessEmail" errors={errors} />
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 lg:flex-row sm:flex-col">
           <div className="w-full">
             <Label>Company</Label>
             <Input
@@ -85,7 +85,7 @@ const ContactUsForm = () => {
           </div>
           <ErrorMessage name="dataSource" errors={errors} />
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 lg:flex-row sm:flex-col">
           <div className="w-full">
             <Label>Volume of Data</Label>
             <Controller
@@ -135,7 +135,7 @@ const ContactUsForm = () => {
             <ErrorMessage name="aboutProject" errors={errors} />
           </div>
         </div>
-        <Button type="submit" disabled={isLoading} className="w-fit ml-auto">
+        <Button type="submit" disabled={isLoading} className="lg:w-fit xs:w-full ml-auto">
           {isLoading ? "Loading..." : "Contact Us"}
         </Button>
       </form>

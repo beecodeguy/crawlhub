@@ -4,7 +4,7 @@ import React from "react";
 
 const ScheduleMeetingBanner = () => {
   return (
-    <div className="container mx-auto mb-[128px] flex justify-between items-center bg-primary px-[40px] py-6 rounded-lg">
+    <div className="container mx-auto mb-[128px] flex lg:flex-row xs:flex-col lg:gap-0 xs:gap-5 justify-between lg:items-center xs:items-start bg-primary px-[40px] py-6 rounded-lg">
       <div className="flex flex-col gap-1 text-white">
         <span className="typography-h3">Prefer a more hands-on approach?</span>
         <span>
