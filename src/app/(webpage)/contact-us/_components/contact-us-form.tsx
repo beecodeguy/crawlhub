@@ -46,7 +46,7 @@ const ContactUsForm = () => {
       <span className="typography-h4">Unlock the Power of Your Data?</span>
       <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex gap-2 lg:flex-row sm:flex-col">
-          <div>
+          <div className="w-full">
             <Label>Full Name</Label>
             <Input {...register("name")} placeholder="Your full name" />
             <ErrorMessage name="name" errors={errors} />
