@@ -7,7 +7,7 @@ const THead = () => {
   return (
     <thead>
       <tr>
-        <th className="typography-h4">Compare Features accross plans</th>
+        <th className="typography-h4">Compare Features across plans</th>
         <th className="border-x border-t border-[#000000]">
           <TableHeaderInfo
             title="Basic Package"

@@ -13,7 +13,7 @@ const SliderHeader: React.FC<IProps> = ({ column }) => {
   return (
     <thead>
       <tr>
-        <th className="typography-h4">Compare Features accross plans</th>
+        <th className="typography-h4">Compare Features across plans</th>
         {column === "basic" && (
           <th className="border-x border-t border-[#000000]">
             <TableHeaderInfo

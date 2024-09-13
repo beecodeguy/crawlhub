@@ -17,7 +17,7 @@ const ListItem: React.FC<TListItem> = ({ text }) => (
 
 const ContactUsDescription = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pt-3">
       <div className="flex flex-col gap-2">
         <span className="typography-h5">
           Your Data, Our Expertise. Simplified for Success.
