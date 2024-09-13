@@ -5,11 +5,9 @@ import pricing from "@/constants/pricing";
 
 const PricingTable = () => {
   return (
-    <div className="pricing-table">
+    <div className="pricing-table hidden lg:block">
       <table className="border-separate border-spacing-x-1">
-        <thead>
-          <THead />
-        </thead>
+        <THead />
         <tbody>
           {pricing.map((x) => (
             <TRow {...x} key={x.title} />

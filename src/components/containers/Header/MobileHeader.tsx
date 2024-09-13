@@ -16,7 +16,7 @@ const MobileHeader = () => {
   };
 
   return (
-    <header className="xs:block lg:hidden">
+    <header className="block lg:hidden">
       <nav className="container mx-auto flex py-3 justify-between items-center">
         <span className="typography-h4 text-primary">CrawlerHub</span>
         <div>
