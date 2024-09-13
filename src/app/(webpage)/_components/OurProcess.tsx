@@ -32,6 +32,7 @@ const OurProcess = () => {
         <div className="flex flex-col">
           <span className="typography-h2">Our Process: How It Works</span>
           <JumpButton
+          href="/pricing"
             whiteIcon
             label="Get Started"
             className="bg-primary text-white px-4 py-2 rounded-lg w-fit mt-[35px]"

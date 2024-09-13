@@ -1,5 +1,5 @@
 import React from "react";
-import TableHeaderInfo from "../../TableHeaderInfo";
+import TableHeaderInfo from "../TableHeaderInfo";
 import { FavouriteIcon } from "@/assets/icons";
 import Image from "next/image";
 
