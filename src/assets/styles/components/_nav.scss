@@ -6,8 +6,8 @@
   @apply h-screen fixed w-full overflow-hidden;
 }
 
-.web-page-layout:has(.mobile-nav), body:has(.mobile-nav) {
+.web-page-layout:has(.mobile-nav), body:has(.mobile-nav), header {
   overflow: hidden;
+  background: linear-gradient(to right, white, #ffeeff, white);
+  z-index: 10000;
 }
-
-
