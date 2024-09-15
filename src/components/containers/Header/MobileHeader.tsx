@@ -3,6 +3,7 @@
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { WebPageRoutes } from "@/constants/routes";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react"; // Icons for hamburger menu
@@ -16,7 +17,11 @@ const MobileHeader = () => {
   };
 
   return (
-    <header className="block lg:hidden">
+    <header
+      className={cn("block lg:hidden", {
+        "mobile-nav": isOpen,
+      })}
+    >
       <nav className="container mx-auto flex py-3 justify-between items-center">
         <span className="typography-h4 text-primary">CrawlerHub</span>
         <div>
@@ -31,7 +36,7 @@ const MobileHeader = () => {
       </nav>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="h-screen container mx-auto flex flex-col items-center gap-4">
+        <div className="container mx-auto flex flex-col items-center gap-4">
           <div className="flex flex-col items-start justify-start gap-4 w-full">
             {[...WebPageRoutes, { title: "Contact", href: "/contact-us" }].map(
               (route) => (

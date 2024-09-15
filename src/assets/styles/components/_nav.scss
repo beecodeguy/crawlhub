@@ -1,3 +1,13 @@
 .web-page-layout:has(.bg-gradient-custom) header {
-    background: linear-gradient(to right, white, #ffeeff, white);
+  background: linear-gradient(to right, white, #ffeeff, white);
 }
+
+.mobile-nav {
+  @apply h-screen fixed w-full overflow-hidden;
+}
+
+.web-page-layout:has(.mobile-nav), body:has(.mobile-nav) {
+  overflow: hidden;
+}
+
+
