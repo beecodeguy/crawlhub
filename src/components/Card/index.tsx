@@ -35,7 +35,7 @@ const Card: React.FC<IProps> = ({ children, className }) => {
   return (
     <div
       className={cn(
-        "p-[20px] bg-white rounded-lg w-[308px] h-[246px]",
+        "p-[20px] bg-white rounded-lg",
         className
       )}
     >
