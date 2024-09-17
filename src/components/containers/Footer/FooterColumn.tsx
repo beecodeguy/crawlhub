@@ -19,7 +19,7 @@ interface IProps {
 type IList = Pick<IProps, "linkList">;
 
 const FooterItemList: React.FC<IList> = ({ linkList }) => (
-  <div className="flex flex-col mt-3 gap-2">
+  <div className="flex flex-col mt-2 gap-2">
     {linkList.map((list) => (
       <Link href={list.link} key={list.id} className="text-sm typography-f1">
         {list.name}

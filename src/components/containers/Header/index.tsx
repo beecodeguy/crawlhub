@@ -14,7 +14,7 @@ const Header = () => {
           <span className="typography-h4 text-primary">CrawlerHub</span>
           <NavItems />
           <div className="flex gap-4 items-center">
-            <Link href="/contact-us">Contact</Link>
+            <Link className="typography-b1" href="/contact-us">Contact</Link>
             <Link href="/login">
               <Button variant="outline">Sign In</Button>
             </Link>

@@ -7,49 +7,48 @@ const Footer = () => {
   return (
     <footer className="bg-primary mt-[128px]">
       <div className="container mx-auto flex flex-col gap-2 py-6 text-white">
-        <div className="flex gap-4 md:flex-row xs:flex-col">
+        <div className="flex md:flex-row xs:flex-col gap-0 xs:gap-2 justify-between w-full">
           <span className="typography-h4">CrawlerHub</span>
-          <div className="flex md:flex-row xs:flex-col md:ga-0 xs:gap-3 justify-between w-full">
-            <FooterColumn
-              name="Solutions"
-              linkList={[
-                { id: 1, name: "Web Scraping", link: "" },
-                { id: 2, name: "Web Scraping API", link: "" },
-                { id: 3, name: "Data Abstraction", link: "" },
-                { id: 4, name: "Consulting Service", link: "" },
-              ]}
-            />
+          <FooterColumn
+            name="Solutions"
+            linkList={[
+              { id: 1, name: "Web Scraping", link: "" },
+              { id: 2, name: "Web Scraping API", link: "" },
+              { id: 3, name: "Data Abstraction", link: "" },
+              { id: 4, name: "Consulting Service", link: "" },
+            ]}
+          />
 
-            <FooterColumn
-              name="Industries"
-              linkList={[
-                { id: 1, name: "E-Commerce", link: "" },
-                { id: 2, name: "Housing and Real Estate", link: "" },
-                { id: 3, name: "Retail and Trading", link: "" },
-                { id: 4, name: "Management and Consulting", link: "" },
-                { id: 5, name: "Analytics", link: "" },
-              ]}
-            />
+          <FooterColumn
+            name="Industries"
+            linkList={[
+              { id: 1, name: "E-Commerce", link: "" },
+              { id: 2, name: "Housing and Real Estate", link: "" },
+              { id: 3, name: "Retail and Trading", link: "" },
+              { id: 4, name: "Management and Consulting", link: "" },
+              { id: 5, name: "Analytics", link: "" },
+            ]}
+          />
 
-            <FooterColumn
-              name="Support"
-              linkList={[
-                { id: 1, name: "Help Center", link: "" },
-                { id: 2, name: "FAQs", link: "" },
-                { id: 3, name: "Blog", link: "" },
-              ]}
-            />
+          <FooterColumn
+            name="Support"
+            linkList={[
+              { id: 1, name: "Help Center", link: "" },
+              { id: 2, name: "FAQs", link: "" },
+              { id: 3, name: "Blog", link: "" },
+            ]}
+          />
 
-            <FooterColumn
-              name="Company"
-              linkList={[
-                { id: 1, name: "About Us", link: "" },
-                { id: 2, name: "Careers", link: "" },
-                { id: 3, name: "Pricing", link: "" },
-              ]}
-            />
-          </div>
+          <FooterColumn
+            name="Company"
+            linkList={[
+              { id: 1, name: "About Us", link: "" },
+              { id: 2, name: "Careers", link: "" },
+              { id: 3, name: "Pricing", link: "" },
+            ]}
+          />
         </div>
+
         <div className="h-[1px] bg-grey-light" />
         <div className="flex md:flex-row xs:flex-col-reverse xs:gap-2 justify-between typography-b1">
           <div className="flex gap-2 typography-f2">
