@@ -18,7 +18,7 @@ const MobileHeader = () => {
 
   return (
     <header
-      className={cn("block lg:hidden", {
+      className={cn("block lg:hidden pb-7", {
         "mobile-nav": isOpen,
       })}
     >

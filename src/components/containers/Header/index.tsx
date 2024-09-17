@@ -9,7 +9,7 @@ const Header = () => {
     <>
       {" "}
       <MobileHeader />
-      <header className="hidden lg:block">
+      <header className="hidden lg:block pb-7">
         <nav className="container mx-auto flex py-3 justify-between items-center">
           <span className="typography-h4 text-primary">CrawlerHub</span>
           <NavItems />
