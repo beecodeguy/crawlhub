@@ -9,12 +9,11 @@ const ManageCrawlers = () => {
       <div>
         <div className="flex flex-col gap-3">
           <div className="typography-h1">
-            We build and manage <span className="text-primary">Crawlers</span>{" "}
-            for you.
+            Unlocking the Power of Data with Precise Extraction
           </div>
           <span className="typography-b1">
-            Are you ready to unlock the full potential of your
-            <br /> business with powerful, precise, and personalized data?
+            Transform data into actionable insights with our hassle-free
+            extraction service. Quick, customized, and cost-effective.
           </span>
         </div>
         <Button className="mt-6">Get Started</Button>

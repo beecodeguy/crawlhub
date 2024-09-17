@@ -12,9 +12,9 @@ const IconWrapper: React.FC<IProps> = ({ icon }) => {
       <Image
         src={icon}
         alt=""
-        height={24}
-        width={24}
-        style={{ minHeight: 24, minWidth: 24 }}
+        height={40}
+        width={40}
+        style={{ minHeight: 40, minWidth: 40 }}
       />
     </div>
   );
