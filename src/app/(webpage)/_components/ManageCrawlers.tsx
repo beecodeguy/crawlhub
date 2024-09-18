@@ -9,7 +9,8 @@ const ManageCrawlers = () => {
       <div>
         <div className="flex flex-col gap-3">
           <div className="typography-h1">
-            Unlocking the Power of Data with Precise Extraction
+            Unlocking the <br />
+            Power of Data with Precise Extraction
           </div>
           <span className="typography-b1">
             Transform data into actionable insights with our hassle-free
