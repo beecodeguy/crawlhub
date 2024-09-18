@@ -5,15 +5,11 @@ import { Trash, EyeIcon } from "lucide-react";
 import React, { useState } from "react";
 import AlertDialog from "@/components/AlertDialog";
 import { revalidatePath } from "@/lib/revalidate";
-import Link from "next/link";
 import { deleteContact } from "@/actions/contacts";
 import { useRouter } from "next/navigation";
 
 interface IProps {
   id: number;
-  status: string;
-  title: string;
-  content: string;
 }
 
 const CellAction: React.FC<IProps> = ({ id }) => {

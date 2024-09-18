@@ -30,7 +30,7 @@ const ForgotPasswordForm = () => {
       <div className="flex flex-col gap-1">
         <span className="typography-h4">Forgot Password?</span>
         <span>
-          Enter your Business email, and we'll send a password reset link.
+          Enter your Business email, and we&apos;ll send a password reset link.
         </span>
       </div>
       <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>

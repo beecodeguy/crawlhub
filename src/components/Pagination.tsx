@@ -12,11 +12,11 @@ import {
 import usePagination from "@/hooks/usePagination";
 
 interface IProps {
-  total: 100;
+  total: number;
   currentPage: number;
 }
 
-export default function ({ total }: IProps) {
+function PaginationComponent ({ total }: IProps) {
   const paginate = usePagination(2);
   const { nextPage, prevPage, currentPage } = paginate;
 
@@ -48,3 +48,5 @@ export default function ({ total }: IProps) {
     </Pagination>
   );
 }
+
+export default PaginationComponent

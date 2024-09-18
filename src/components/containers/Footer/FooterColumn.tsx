@@ -29,7 +29,6 @@ const FooterItemList: React.FC<IList> = ({ linkList }) => (
 );
 
 const FooterColumn: React.FC<IProps> = ({ name, linkList }) => {
-  
   return (
     <>
       <Accordion type="single" collapsible className="md:hidden xs:block">

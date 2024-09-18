@@ -24,7 +24,7 @@ const ContactUsDescription = () => {
         </span>
         <p className="leading-[20px] text-[14px]">
           At Crawlerhub, we specialize in delivering customized data extraction
-          solutions that are built around your needs. Whether you're dealing
+          solutions that are built around your needs. Whether you&apos;re dealing
           with massive datasets or just need a specific extraction, our
           streamlined process ensures you get accurate, actionable data—fast.
         </p>
@@ -49,7 +49,7 @@ const ContactUsDescription = () => {
             Let us handle the complexity while you focus on making data-driven
             decisions that grow your business.
           </span>{" "}
-          Fill out the form, and let’s start your project!
+          Fill out the form, and let&apos;s start your project!
         </p>
       </div>
     </div>
