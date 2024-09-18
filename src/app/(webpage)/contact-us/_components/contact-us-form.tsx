@@ -42,7 +42,7 @@ const ContactUsForm = () => {
   };
 
   return (
-    <div className="p-3 bg-white-foreground flex flex-col gap-3 justify-center lg:w-[2000px] sm:w-full shadow-custom">
+    <div className="px-4 py-6 bg-white-foreground flex flex-col gap-3 justify-center lg:w-[2000px] sm:w-full shadow-custom">
       <span className="typography-h4">Unlock the Power of Your Data?</span>
       <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex gap-2 lg:flex-row xs:flex-col">
