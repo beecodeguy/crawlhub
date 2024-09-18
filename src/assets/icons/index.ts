@@ -11,7 +11,6 @@ export { default as Explore } from "./explore.png";
 export { default as TechComputer } from "./tech_computer.png";
 export { default as InfoIcon } from "./info_icon.png";
 export { default as SettingIcon } from "./settings_icon.png";
-export { default as SpiderIcon } from "./spider_icon.png";
 export { default as DataDeliveryIcon } from "./data_delivery_icon.png";
 export { default as RightArrowIcon } from "./right_arrow._icon.svg";
 export { default as RightArrowWhiteIcon } from "./right_arrow_white_icon.png";

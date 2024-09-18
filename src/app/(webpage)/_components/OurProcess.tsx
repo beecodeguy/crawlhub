@@ -1,8 +1,8 @@
 import {
+  Customized,
   DataDeliveryIcon,
   InfoIcon,
   SettingIcon,
-  SpiderIcon,
 } from "@/assets/icons";
 import IconWrapper from "@/components/IconWrapper";
 import JumpButton from "@/components/JumpButton";
@@ -52,7 +52,7 @@ const OurProcess = () => {
 size and website’s complexity shall be assessed"
           />
           <ProcessInfo
-            icon={SpiderIcon}
+            icon={Customized}
             title="Customized Quote"
             description="Following the assessment, a precise and transparent quote will be 
 issued, tailored to the specific project needs."
